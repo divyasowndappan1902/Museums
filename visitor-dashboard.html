@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visitor Dashboard — STACKLY Museum</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛</text></svg>">
+</head>
+
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-logo">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg>
+          STA<span>C</span>KLY
+        </a>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+            </path>
+          </svg>
+          My Dashboard
+        </a>
+        <a href="#" class="nav-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z">
+            </path>
+          </svg>
+          My Tickets
+        </a>
+        <a href="#" class="nav-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+            </path>
+          </svg>
+          Saved Artworks
+        </a>
+        <a href="#" class="nav-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+            </path>
+          </svg>
+          Membership
+        </a>
+        <a href="#" class="nav-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+            </path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
+            </path>
+          </svg>
+          Account Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="user-avatar" style="background:var(--white-pure);">JD</div>
+          <div class="user-info">
+            <span class="user-name">Jane Doe</span>
+            <span class="user-role" style="color:var(--gold);">Gold Member</span>
+          </div>
+        </div>
+        <a href="index.html" id="visitor-logout-btn" class="logout-btn" aria-label="Log out">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18" height="18">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+          </svg>
+          Log Out
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-wrapper">
+
+      <!-- TOP HEADER -->
+      <header class="top-header">
+        <div style="display:flex; align-items:center; gap:16px;">
+          <button class="mobile-sidebar-toggle">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          <h1 class="page-title">Visitor Hub</h1>
+        </div>
+
+        <div class="header-actions">
+          <button class="action-btn" aria-label="Notifications">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+              </path>
+            </svg>
+          </button>
+          <a href="exhibitions.html" class="btn-primary"
+            style="padding: 10px 20px; font-size: 0.8rem; text-decoration:none;">Book Tickets</a>
+        </div>
+      </header>
+
+      <!-- SCROLLABLE CONTENT -->
+      <div class="dashboard-content">
+<div class="dashboard-tab-pane" style="display:block;">
+
+        <!-- WELCOME BANNER -->
+        <div class="welcome-banner">
+          <h2 class="welcome-title">Welcome back, Jane.</h2>
+          <p class="welcome-subtitle">Your Gold Membership is active until December 31, 2026. You have 2 unused guest
+            passes.</p>
+          <button class="btn-outline" style="margin-top: 24px; border-color:var(--gold); color:var(--gold);">View
+            Membership Benefits</button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+
+          <!-- UPCOMING VISITS -->
+          <section class="data-section">
+            <div class="data-section-header">
+              <h2 class="data-section-title">Upcoming Visits</h2>
+            </div>
+            <div style="padding: 24px;">
+              <div
+                style="display:flex; gap:20px; background:rgba(255,255,255,0.02); padding:20px; border-radius:8px; border:1px solid rgba(255,255,255,0.05);">
+                <div
+                  style="background:var(--gold); color:var(--black); padding:16px; border-radius:8px; text-align:center; min-width:80px;">
+                  <div style="font-size:0.8rem; text-transform:uppercase; font-weight:700;">OCT</div>
+                  <div style="font-family:var(--font-display); font-size:1.8rem; font-weight:700;">14</div>
+                </div>
+                <div>
+                  <h3
+                    style="font-family:var(--font-display); font-size:1.2rem; color:var(--white-pure); margin-bottom:8px;">
+                    Echoes of the Earth Exhibition</h3>
+                  <p style="color:var(--gray); font-size:0.9rem; margin-bottom:8px;">2x Adult Tickets • 10:00 AM Entry
+                  </p>
+                  <a href="#" style="color:var(--gold); font-size:0.85rem; text-decoration:none;">Download PDF
+                    Tickets</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SAVED ARTWORKS -->
+          <section class="data-section">
+            <div class="data-section-header">
+              <h2 class="data-section-title">Saved Artworks</h2>
+              <a href="#" style="color:var(--gold); font-size:0.85rem; text-decoration:none;">View Gallery</a>
+            </div>
+            <div style="padding: 24px; display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div style="position:relative; border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
+                <img src="images/artwork1.png" style="width:100%; height:100%; object-fit:cover;" alt="Saved artwork">
+              </div>
+              <div style="position:relative; border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
+                <img src="images/artwork2.png" style="width:100%; height:100%; object-fit:cover;" alt="Saved artwork">
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- RECENT ACTIVITY TABLE -->
+        <section class="data-section" style="margin-top: 40px;">
+          <div class="data-section-header">
+            <h2 class="data-section-title">Recent Orders</h2>
+          </div>
+          <table class="dashboard-table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Total</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#MUSE-8821A</td>
+                <td>Echoes of the Earth (2 Tickets)</td>
+                <td>Sep 12, 2026</td>
+                <td>$0.00 (Member)</td>
+                <td><span class="status-badge status-active">Confirmed</span></td>
+              </tr>
+              <tr>
+                <td>#MUSE-7192C</td>
+                <td>Geometric Visions Catalog (Book)</td>
+                <td>Aug 05, 2026</td>
+                <td>$45.00</td>
+                <td><span class="status-badge status-active">Delivered</span></td>
+              </tr>
+              <tr>
+                <td>#MUSE-5510B</td>
+                <td>Gold Membership Renewal</td>
+                <td>Dec 15, 2025</td>
+                <td>$150.00</td>
+                <td><span class="status-badge status-active">Active</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+      </div>
+</div>
+
+<div class="dashboard-tab-pane" style="display:none;">
+
+      <div class="data-section" style="margin-bottom: 2rem;">
+        <div class="data-section-header">
+          <h2 class="data-section-title">Active &amp; Upcoming Tickets</h2>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 1rem;">
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <h3 style="font-size: 1.1rem; margin-bottom: 4px;">General Admission</h3>
+              <p style="font-size: 0.85rem; color: #888;">Valid until Dec 31, 2026</p>
+            </div>
+            <button class="btn-primary" style="padding: 6px 12px; font-size: 0.8rem;">View QR</button>
+          </div>
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <h3 style="font-size: 1.1rem; margin-bottom: 4px;">Geometric Visions: Special Access</h3>
+              <p style="font-size: 0.85rem; color: #888;">October 15, 2026 • 2:00 PM</p>
+            </div>
+            <button class="btn-primary" style="padding: 6px 12px; font-size: 0.8rem;">View QR</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="data-section">
+        <div class="data-section-header">
+          <h2 class="data-section-title">Past Tickets</h2>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 1rem;">
+          <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.02); border-radius: 8px; padding: 16px; display: flex; justify-content: space-between; align-items: center; opacity: 0.6;">
+            <div>
+              <h3 style="font-size: 1.1rem; margin-bottom: 4px;">Impressionist Dreams Preview</h3>
+              <p style="font-size: 0.85rem; color: #888;">March 10, 2026 • 10:00 AM</p>
+            </div>
+            <span style="font-size: 0.85rem; color: #888; font-weight: 500;">Used</span>
+          </div>
+        </div>
+      </div>
+    
+</div>
+
+<div class="dashboard-tab-pane" style="display:none;">
+
+      <div class="data-section" style="margin-bottom: 2rem;">
+        <div class="data-section-header">
+          <h2 class="data-section-title">My Favorites</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; margin-top: 1rem;">
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; position: relative;">
+            <div style="height: 140px; background: #333; border-radius: 4px; margin-bottom: 12px; overflow: hidden;">
+               <img src="images/artwork1.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Artwork" onerror="this.style.display='none'">
+            </div>
+            <h3 style="font-size: 1rem; margin-bottom: 4px;">Silent Echoes</h3>
+            <p style="font-size: 0.8rem; color: #888;">Elara Vance, 2024</p>
+            <button aria-label="Unfavorite" style="position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.5); border: none; color: var(--gold); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.2rem;">♥</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="data-section">
+        <div class="data-section-header">
+          <h2 class="data-section-title">Curated For You</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; margin-top: 1rem;">
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; position: relative;">
+            <div style="height: 140px; background: #444; border-radius: 4px; margin-bottom: 12px; overflow: hidden;">
+               <img src="images/artwork2.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Artwork" onerror="this.style.display='none'">
+            </div>
+            <h3 style="font-size: 1rem; margin-bottom: 4px;">Neon Symphony</h3>
+            <p style="font-size: 0.8rem; color: #888;">Marcus Lin, 2025</p>
+            <button aria-label="Favorite" style="position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.5); border: none; color: #fff; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.2rem;">♡</button>
+          </div>
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; position: relative;">
+            <div style="height: 140px; background: #222; border-radius: 4px; margin-bottom: 12px; overflow: hidden;">
+               <img src="images/gallery1.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Artwork" onerror="this.style.display='none'">
+            </div>
+            <h3 style="font-size: 1rem; margin-bottom: 4px;">Abstract Geometry</h3>
+            <p style="font-size: 0.8rem; color: #888;">Sophia Rossi, 2023</p>
+            <button aria-label="Favorite" style="position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.5); border: none; color: #fff; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.2rem;">♡</button>
+          </div>
+        </div>
+      </div>
+    
+</div>
+
+<div class="dashboard-tab-pane" style="display:none;">
+
+      <div class="data-section" style="margin-bottom: 2rem;">
+        <div class="data-section-header">
+          <h2 class="data-section-title">Current Membership</h2>
+        </div>
+        <div style="background: linear-gradient(135deg, rgba(212,175,55,0.1) 0%, rgba(212,175,55,0.02) 100%); border: 1px solid rgba(212,175,55,0.2); border-radius: 8px; padding: 24px; margin-top: 1rem;">
+          <h3 style="color: var(--gold); font-size: 1.2rem; margin-bottom: 8px;">Premium Member</h3>
+          <p style="color: #ccc; margin-bottom: 16px;">Thank you for your continued support. Your membership grants you exclusive access to pre-exhibitions and private events.</p>
+          <ul style="list-style: none; padding: 0; margin-bottom: 20px; color: #aaa; line-height: 1.6;">
+             <li>✓ Free unlimited admission</li>
+             <li>✓ Priority booking for special events</li>
+             <li>✓ 15% discount at the museum shop</li>
+          </ul>
+          <button class="btn-primary" style="padding: 8px 16px;">Renew Membership</button>
+        </div>
+      </div>
+
+      <div class="data-section">
+        <div class="data-section-header">
+          <h2 class="data-section-title">Billing History</h2>
+        </div>
+        <table class="dashboard-table" style="margin-top: 1rem;">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jan 12, 2026</td>
+              <td>Premium Annual Renewal</td>
+              <td>$120.00</td>
+              <td><span style="color: #4CAF50; font-size: 0.85rem; padding: 4px 8px; border: 1px solid rgba(76, 175, 80, 0.2); border-radius: 12px; background: rgba(76, 175, 80, 0.1);">Paid</span></td>
+            </tr>
+            <tr>
+              <td>Jan 12, 2025</td>
+              <td>Premium Annual Renewal</td>
+              <td>$120.00</td>
+              <td><span style="color: #4CAF50; font-size: 0.85rem; padding: 4px 8px; border: 1px solid rgba(76, 175, 80, 0.2); border-radius: 12px; background: rgba(76, 175, 80, 0.1);">Paid</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+</div>
+
+<div class="dashboard-tab-pane" style="display:none;">
+
+      <div class="data-section" style="margin-bottom: 2rem;">
+        <div class="data-section-header">
+          <h2 class="data-section-title">Profile Information</h2>
+        </div>
+        <form style="display: flex; flex-direction: column; gap: 16px; max-width: 500px; margin-top: 1rem;">
+          <div>
+            <label style="display: block; margin-bottom: 8px; font-size: 0.85rem; color: #aaa;">Full Name</label>
+            <input type="text" value="Jane Doe" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 4px;">
+          </div>
+          <div>
+            <label style="display: block; margin-bottom: 8px; font-size: 0.85rem; color: #aaa;">Email Address</label>
+            <input type="email" value="jane@example.com" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 4px;">
+          </div>
+          <button type="button" class="btn-primary" style="padding: 10px; width: fit-content;">Update Profile</button>
+        </form>
+      </div>
+
+      <div class="data-section">
+        <div class="data-section-header">
+          <h2 class="data-section-title">Security &amp; Preferences</h2>
+        </div>
+        <form style="display: flex; flex-direction: column; gap: 16px; max-width: 500px; margin-top: 1rem;">
+          <div>
+            <label style="display: block; margin-bottom: 8px; font-size: 0.85rem; color: #aaa;">Change Password</label>
+            <input type="password" placeholder="New Password" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 4px; margin-bottom: 8px;">
+            <input type="password" placeholder="Confirm Password" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 4px;">
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; margin-top: 8px;">
+            <input type="checkbox" id="newsletter" checked style="accent-color: var(--gold); width: 16px; height: 16px;">
+            <label for="newsletter" style="font-size: 0.9rem; color: #ccc;">Subscribe to monthly newsletter and exhibition updates</label>
+          </div>
+          <button type="button" class="btn-primary" style="padding: 10px; width: fit-content; margin-top: 8px;">Save Settings</button>
+        </form>
+      </div>
+    
+</div>
+
+</div>
+    </main>
+  </div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navItems = document.querySelectorAll('.sidebar-nav .nav-item');
+    const dashboardContent = document.querySelector('.dashboard-content');
+    const pageTitle = document.querySelector('.page-title');
+    
+    if (!dashboardContent || navItems.length === 0) return;
+
+    // Use our hardcoded tabs
+    const panes = document.querySelectorAll('.dashboard-tab-pane');
+
+    navItems.forEach((item, index) => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        navItems.forEach(n => n.classList.remove('active'));
+        item.classList.add('active');
+        
+        if (pageTitle) {
+          pageTitle.textContent = item.textContent.trim();
+        }
+
+        panes.forEach((p, i) => {
+          p.style.display = i === index ? 'block' : 'none';
+        });
+        
+        const sidebar = document.querySelector('.dashboard-sidebar');
+        if (sidebar && window.innerWidth <= 768) {
+          sidebar.classList.remove('open');
+        }
+      });
+    });
+
+    const mobileToggle = document.querySelector('.mobile-sidebar-toggle');
+    const sidebar = document.querySelector('.dashboard-sidebar');
+    if (mobileToggle && sidebar) {
+      mobileToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
+    }
+  });
+</script>
+
+</body>
+
+</html>

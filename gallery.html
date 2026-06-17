@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Stackly Museum</title>
+  <meta name="description" content="Browse the extensive collection of artworks at MUSE Museum.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛</text></svg>">
+</head>
+
+<body>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">✕</button>
+      <img id="lightbox-img" src="" alt="Gallery artwork">
+    </div>
+  </div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <button id="mobile-menu-close" aria-label="Close menu"
+      style="position:absolute;top:32px;right:32px;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;">✕</button>
+    <nav class="mobile-menu-links">
+      <a href="index.html" class="mobile-menu-link">Home</a>
+      <a href="about.html" class="mobile-menu-link">About</a>
+      <a href="exhibitions.html" class="mobile-menu-link">Exhibitions</a>
+      <a href="gallery.html" class="mobile-menu-link">Gallery</a>
+      <a href="index.html#signin" class="mobile-menu-link">Sign In</a>
+    </nav>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header id="navbar" role="banner">
+    <a href="index.html" class="nav-logo" aria-label="Stackly Museum Home">STA<span>C</span>KLY</a>
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="gallery.html" class="active-nav">Gallery</a>
+      <a href="index.html#signin" class="nav-cta">Sign In</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="section-eyebrow reveal" style="justify-content:center;">
+      <div class="section-eyebrow-line"></div>
+      <span class="section-eyebrow-text">Collection</span>
+    </div>
+    <h1 class="page-hero-title reveal delay-1">The <em>Gallery</em></h1>
+    <p class="page-hero-subtitle reveal delay-2">Browse through our extensive permanent collection spanning multiple
+      disciplines and eras of modern art.</p>
+  </div>
+
+  <!-- GALLERY SECTION -->
+  <section id="gallery" style="padding-top: 60px;">
+    <div class="gallery-header">
+      <div class="gallery-filter reveal" role="group" aria-label="Gallery filter">
+        <button class="gallery-filter-btn active" data-filter="all">All</button>
+        <button class="gallery-filter-btn" data-filter="painting">Paintings</button>
+        <button class="gallery-filter-btn" data-filter="sculpture">Sculpture</button>
+        <button class="gallery-filter-btn" data-filter="photo">Photography</button>
+      </div>
+    </div>
+
+    <div class="gallery-masonry" role="list" aria-label="Art gallery">
+      <!-- Item 1 -->
+      <div class="gallery-item" data-category="painting" role="listitem" tabindex="0">
+        <img src="images/artwork1.png" alt="Geometric Visions — Abstract painting with gold and black" loading="lazy">
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="gallery-item" data-category="sculpture" role="listitem" tabindex="0">
+        <div
+          style="width:100%;height:340px;display:block; background:linear-gradient(160deg,#050510 0%,#0a0a28 50%,#080814 100%); position:relative;overflow:hidden;">
+          <div
+            style="position:absolute;width:140px;height:140px;border-radius:50%;border:2px solid rgba(201,168,76,0.4);top:50%;left:50%;transform:translate(-50%,-50%);">
+          </div>
+          <div
+            style="position:absolute;bottom:20px;right:20px;font-family:'Playfair Display',serif;font-size:0.6rem;letter-spacing:0.2em;color:rgba(201,168,76,0.4);text-transform:uppercase;">
+            Cosmos I</div>
+        </div>
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="gallery-item" data-category="painting" role="listitem" tabindex="0">
+        <img src="images/artwork2.png" alt="Impressionist painting — woman by window" loading="lazy">
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="gallery-item" data-category="photo" role="listitem" tabindex="0">
+        <div
+          style="width:100%;height:200px;display:block; background:linear-gradient(135deg,#1a0505 0%,#2d0808 40%,#1a0505 100%); position:relative;overflow:hidden;">
+          <div
+            style="position:absolute;bottom:16px;left:16px;font-family:'Playfair Display',serif;font-size:0.55rem;letter-spacing:0.2em;color:rgba(201,168,76,0.5);text-transform:uppercase;">
+            Crimson Study</div>
+        </div>
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="gallery-item" data-category="photo" role="listitem" tabindex="0">
+        <img src="images/artist1.png" alt="Artist Elena Marchetti in her studio" loading="lazy">
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="gallery-item" data-category="sculpture" role="listitem" tabindex="0">
+        <div
+          style="width:100%;height:280px;display:block; background:linear-gradient(160deg,#051408 0%,#0a2814 50%,#051408 100%); position:relative;overflow:hidden;">
+          <div
+            style="position:absolute;bottom:16px;right:16px;font-family:'Playfair Display',serif;font-size:0.55rem;letter-spacing:0.2em;color:rgba(50,180,80,0.5);text-transform:uppercase;">
+            Equilibrium</div>
+        </div>
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Item 7 -->
+      <div class="gallery-item" data-category="photo" role="listitem" tabindex="0">
+        <img src="images/exhibition.png" alt="MUSE exhibition gallery hall" loading="lazy">
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="gallery-item" data-category="painting" role="listitem" tabindex="0">
+        <div
+          style="width:100%;height:240px;display:block; background:linear-gradient(135deg,#050814 0%,#0a1428 50%,#050814 100%); position:relative;overflow:hidden;">
+          <div
+            style="position:absolute;top:20px;right:16px;font-family:'Playfair Display',serif;font-size:0.55rem;letter-spacing:0.2em;color:rgba(100,140,255,0.5);text-transform:uppercase;">
+            Deep Blue</div>
+        </div>
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">M<span>U</span>SE</div>
+        <p class="footer-tagline">Where Art Meets Eternity</p>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Explore</h3>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link">About</a></li>
+          <li><a href="exhibitions.html" class="footer-link">Exhibitions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Visit</h3>
+        <ul class="footer-links">
+          <li><a href="index.html#visit" class="footer-link">Tickets & Admission</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Contact</h3>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📍</span>
+          <span class="footer-contact-text">1011 Fifth Avenue<br>New York, NY 10028</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2026 MUSE Museum. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account — STACKLY Museum of Modern & Contemporary Art</title>
+  <meta name="description"
+    content="Join STACKLY — create your free account to access exclusive exhibitions, personalized art recommendations, and member-only cultural events.">
+  <meta name="keywords" content="STACKLY museum sign up, create museum account, join art museum, museum membership">
+  <meta property="og:title" content="Create Account — STACKLY Museum">
+  <meta property="og:description"
+    content="Join STACKLY and unlock exclusive exhibitions, personalized art recommendations, and member-only events.">
+  <meta property="og:type" content="website">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛</text></svg>">
+
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+
+    /* ── Page Layout ── */
+    .signup-page {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+
+    /* ── Left Form Panel ── */
+    .signup-form-panel {
+      background: var(--dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 48px;
+      position: relative;
+      min-height: 100vh;
+      overflow-y: auto;
+    }
+
+    .signup-form-panel::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(201, 168, 76, 0.3) 30%, rgba(201, 168, 76, 0.3) 70%, transparent);
+    }
+
+    /* back link */
+    .signup-back {
+      position: absolute;
+      top: 32px;
+      left: 32px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .signup-back:hover {
+      color: var(--gold);
+    }
+
+    .signup-back svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .signup-form-inner {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    /* Logo */
+    .signup-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--white-pure);
+      text-decoration: none;
+      margin-bottom: 28px;
+    }
+
+    .signup-logo svg {
+      width: 28px;
+      height: 28px;
+      color: var(--gold);
+    }
+
+    .signup-logo span {
+      color: var(--gold);
+    }
+
+    .signup-heading {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--white-pure);
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .signup-subheading {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 30px;
+    }
+
+    /* Social signup */
+    .social-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      color: var(--white-pure);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .social-btn svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    /* Divider */
+    .or-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .or-divider::before,
+    .or-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .or-divider span {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.3);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+
+    /* Form */
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Two-column grid for name row */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--white-pure);
+      letter-spacing: 0.02em;
+    }
+
+    .form-input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 13px 16px 13px 44px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      color: var(--white-pure);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+      appearance: none;
+      box-sizing: border-box;
+    }
+
+    .form-input:focus {
+      border-color: var(--gold);
+      background: rgba(201, 168, 76, 0.03);
+      box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.08);
+    }
+
+    .form-input::placeholder {
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    .form-input.no-left-icon {
+      padding-left: 16px;
+    }
+
+    .form-input.has-right-icon {
+      padding-right: 44px;
+    }
+
+    /* Password strength bar */
+    .strength-bar-wrap {
+      display: flex;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .strength-bar {
+      flex: 1;
+      height: 3px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      transition: background 0.3s ease;
+    }
+
+    .strength-bar.active-weak {
+      background: #e05555;
+    }
+
+    .strength-bar.active-fair {
+      background: #e0a555;
+    }
+
+    .strength-bar.active-good {
+      background: #55a0e0;
+    }
+
+    .strength-bar.active-strong {
+      background: #55c87c;
+    }
+
+    .strength-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+      margin-top: 4px;
+      transition: color 0.3s ease;
+    }
+
+    .input-icon-left {
+      position: absolute;
+      left: 14px;
+      width: 18px;
+      height: 18px;
+      color: rgba(255, 255, 255, 0.3);
+      pointer-events: none;
+      transition: color 0.3s ease;
+    }
+
+    .form-input:focus+.input-icon-left {
+      color: var(--gold);
+    }
+
+    .input-eye-btn {
+      position: absolute;
+      right: 12px;
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.3s ease;
+    }
+
+    .input-eye-btn:hover {
+      color: var(--gold);
+    }
+
+    .input-eye-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Select input */
+    .form-select {
+      width: 100%;
+      padding: 13px 40px 13px 44px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      color: var(--white-pure);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.3s ease, background 0.3s ease;
+      appearance: none;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    .form-select:focus {
+      border-color: var(--gold);
+      background: rgba(201, 168, 76, 0.03);
+      box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.08);
+    }
+
+    .form-select option {
+      background: #1a1a1a;
+      color: var(--white-pure);
+    }
+
+    .select-chevron {
+      position: absolute;
+      right: 14px;
+      width: 18px;
+      height: 18px;
+      color: rgba(255, 255, 255, 0.3);
+      pointer-events: none;
+    }
+
+    /* Terms checkbox */
+    .terms-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .terms-checkbox {
+      appearance: none;
+      width: 17px;
+      height: 17px;
+      min-width: 17px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 4px;
+      background: transparent;
+      cursor: pointer;
+      position: relative;
+      margin-top: 1px;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .terms-checkbox:checked {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .terms-checkbox:checked::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--black);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .terms-text {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.5;
+      cursor: pointer;
+    }
+
+    .terms-text a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .terms-text a:hover {
+      opacity: 0.75;
+      text-decoration: underline;
+    }
+
+    /* Error message */
+    .form-error {
+      display: none;
+      font-size: 0.78rem;
+      color: #e05555;
+      padding: 10px 14px;
+      background: rgba(224, 85, 85, 0.08);
+      border: 1px solid rgba(224, 85, 85, 0.2);
+      border-radius: 8px;
+    }
+
+    .form-error.show {
+      display: block;
+    }
+
+    /* Submit */
+    .submit-btn {
+      width: 100%;
+      padding: 15px;
+      margin-top: 4px;
+      background: linear-gradient(90deg, #c9a84c 0%, #e6ca7b 50%, #c9a84c 100%);
+      background-size: 200% auto;
+      color: #0a0a0a;
+      border: none;
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+      transition: background-position 0.5s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .submit-btn:hover {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(201, 168, 76, 0.45);
+    }
+
+    .submit-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Sign in link */
+    .signin-link-row {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .signin-link-row a {
+      color: var(--gold);
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .signin-link-row a:hover {
+      opacity: 0.75;
+      text-decoration: underline;
+    }
+
+    /* ── Right Decorative Panel ── */
+    .signup-panel {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px;
+      text-align: center;
+    }
+
+    .signup-panel-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(10, 10, 10, 0.5) 0%, rgba(10, 10, 10, 0.75) 100%),
+        url('images/hero.png') center/cover no-repeat;
+    }
+
+    .signup-panel-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201, 168, 76, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201, 168, 76, 0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .signup-panel-content {
+      position: relative;
+      z-index: 1;
+      max-width: 400px;
+    }
+
+    .signup-panel-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(201, 168, 76, 0.12);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+    }
+
+    .signup-panel-icon svg {
+      width: 32px;
+      height: 32px;
+      color: var(--gold);
+    }
+
+    .signup-panel-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--white-pure);
+      margin-bottom: 20px;
+    }
+
+    .signup-panel-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .signup-panel-desc {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    /* Benefits list */
+    .benefits-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      text-align: left;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 10px;
+      backdrop-filter: blur(4px);
+    }
+
+    .benefit-icon {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      border-radius: 8px;
+      background: rgba(201, 168, 76, 0.12);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .benefit-icon svg {
+      width: 18px;
+      height: 18px;
+      color: var(--gold);
+    }
+
+    .benefit-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .benefit-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--white-pure);
+    }
+
+    .benefit-desc {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .signup-page {
+        grid-template-columns: 1fr;
+      }
+
+      .signup-panel {
+        display: none;
+      }
+
+      .signup-form-panel {
+        padding: 100px 32px 60px;
+        min-height: 100vh;
+      }
+
+      .signup-form-panel::after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .signup-form-panel {
+        padding: 100px 20px 60px;
+      }
+
+      .social-btns {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================
+       CUSTOM CURSOR
+       ========================================== -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- ==========================================
+       SIGN UP PAGE
+       ========================================== -->
+  <main class="signup-page" role="main">
+
+    <!-- Left Form Panel -->
+    <div class="signup-form-panel">
+      <a href="index.html" class="signup-back" id="back-home-link">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19 12H5M12 5l-7 7 7 7" />
+        </svg>
+        Back to Home
+      </a>
+
+      <div class="signup-form-inner">
+
+        <!-- Logo -->
+        <a href="index.html" class="signup-logo" id="signup-logo-link" aria-label="MUSE Home">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M9 21V12h6v9" />
+          </svg>
+          <span>MUSE</span>
+        </a>
+
+        <h1 class="signup-heading">Create your account</h1>
+        <p class="signup-subheading">Join thousands of art lovers exploring stackly</p>
+
+        <!-- Social Sign Up -->
+        <div class="social-btns" role="group" aria-label="Sign up with social accounts">
+          <a href="#" class="social-btn" id="google-signup-btn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#EA4335"
+                d="M5.26 9.77A7.24 7.24 0 0 1 12 4.75c1.8 0 3.42.66 4.68 1.74L19.96 3.2A11.99 11.99 0 0 0 12 .75 12 12 0 0 0 .76 8.44l4.5 3.33z" />
+              <path fill="#34A853"
+                d="M16.04 19.27A7.22 7.22 0 0 1 12 20.5c-2.95 0-5.47-1.77-6.71-4.34l-4.5 3.33A12 12 0 0 0 12 23.25c3.1 0 5.98-1.14 8.18-3l-4.14-2.98z" />
+              <path fill="#4A90D9"
+                d="M20.18 20.25A11.9 11.9 0 0 0 23.25 13c0-.78-.07-1.53-.2-2.25H12v4.5h6.34a5.52 5.52 0 0 1-2.3 3.02l4.14 2.98z" />
+              <path fill="#FBBC05"
+                d="M5.29 14.16A7.23 7.23 0 0 1 4.75 12c0-.75.11-1.48.3-2.17L.55 6.5A12 12 0 0 0 0 12c0 1.9.44 3.7 1.22 5.3l4.07-3.14z" />
+            </svg>
+            Google
+          </a>
+          <a href="#" class="social-btn" id="facebook-signup-btn">
+            <svg viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true">
+              <path
+                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3l-.5 3H13v6.8c4.56-.93 8-4.96 8-9.8z" />
+            </svg>
+            Facebook
+          </a>
+        </div>
+
+        <!-- Divider -->
+        <div class="or-divider"><span>OR SIGN UP WITH EMAIL</span></div>
+
+        <!-- Sign Up Form -->
+        <form class="signup-form" id="signup-form" novalidate aria-label="Sign up form">
+
+          <!-- Name Row -->
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="signup-firstname">First Name</label>
+              <div class="form-input-wrap">
+                <input id="signup-firstname" type="text" class="form-input" placeholder="Jane" autocomplete="given-name"
+                  required>
+                <svg class="input-icon-left" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"
+                  aria-hidden="true">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="signup-lastname">Last Name</label>
+              <div class="form-input-wrap">
+                <input id="signup-lastname" type="text" class="form-input" placeholder="Doe" autocomplete="family-name"
+                  required>
+                <svg class="input-icon-left" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"
+                  aria-hidden="true">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label class="form-label" for="signup-email">Email Address</label>
+            <div class="form-input-wrap">
+              <input id="signup-email" type="email" class="form-input" placeholder="you@example.com"
+                autocomplete="email" required>
+              <svg class="input-icon-left" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Member Type -->
+          <div class="form-group">
+            <label class="form-label" for="signup-role">I am a…</label>
+            <div class="form-input-wrap">
+              <select id="signup-role" class="form-select" required aria-label="Member type">
+                <option value="" disabled selected>Select membership type</option>
+                <option value="visitor"> Visitor</option>
+                <option value="admin">Admin</option>
+
+
+              </select>
+              <svg class="input-icon-left" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+              <svg class="select-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                aria-hidden="true">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label class="form-label" for="signup-password">Password</label>
+            <div class="form-input-wrap">
+              <input id="signup-password" type="password" class="form-input has-right-icon"
+                placeholder="Create a strong password" autocomplete="new-password" required>
+              <svg class="input-icon-left" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"
+                aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              <button type="button" class="input-eye-btn" id="toggle-password" aria-label="Toggle password visibility">
+                <svg id="eye-icon-pw" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                  aria-hidden="true">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </button>
+            </div>
+            <!-- Password Strength -->
+            <div class="strength-bar-wrap" id="strength-bars" aria-label="Password strength">
+              <div class="strength-bar" id="bar1"></div>
+              <div class="strength-bar" id="bar2"></div>
+              <div class="strength-bar" id="bar3"></div>
+              <div class="strength-bar" id="bar4"></div>
+            </div>
+            <div class="strength-label" id="strength-label"></div>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="form-group">
+            <label class="form-label" for="signup-confirm-password">Confirm Password</label>
+            <div class="form-input-wrap">
+              <input id="signup-confirm-password" type="password" class="form-input has-right-icon"
+                placeholder="Re-enter your password" autocomplete="new-password" required>
+              <svg class="input-icon-left" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path d="M9 12l2 2 4-4" />
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              <button type="button" class="input-eye-btn" id="toggle-confirm-password"
+                aria-label="Toggle confirm password visibility">
+                <svg id="eye-icon-cpw" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                  aria-hidden="true">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Terms & Conditions -->
+          <label class="terms-row" for="agree-terms" id="terms-label">
+            <input type="checkbox" id="agree-terms" class="terms-checkbox" required>
+            <span class="terms-text">
+              I agree to MUSE's <a href="#" id="terms-link">Terms of Service</a> and
+              <a href="#" id="privacy-link">Privacy Policy</a>, and consent to receive
+              occasional updates about exhibitions and events.
+            </span>
+          </label>
+
+          <!-- Newsletter opt-in -->
+          <label class="terms-row" for="newsletter-optin">
+            <input type="checkbox" id="newsletter-optin" class="terms-checkbox">
+            <span class="terms-text">
+              Send me personalised art recommendations and early access to exclusive events.
+            </span>
+          </label>
+
+          <!-- Error -->
+          <div class="form-error" id="signup-error" role="alert"></div>
+
+          <!-- Submit -->
+          <button type="submit" class="submit-btn" id="signup-submit-btn">
+            Create Account
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+
+        </form>
+
+        <!-- Already have account -->
+        <div class="signin-link-row">
+          Already have an account?
+          <a href="index.html#signin" id="go-to-signin-link">Sign in</a>
+        </div>
+
+      </div><!-- /signup-form-inner -->
+    </div><!-- /signup-form-panel -->
+
+    <!-- Right Decorative Panel -->
+    <div class="signup-panel" aria-hidden="true">
+      <div class="signup-panel-bg"></div>
+      <div class="signup-panel-grid"></div>
+
+      <div class="signup-panel-content">
+        <div class="signup-panel-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M9 21V12h6v9" />
+          </svg>
+        </div>
+
+        <h2 class="signup-panel-title">
+          Your Journey into <em>Art</em> Begins Here
+        </h2>
+
+        <p class="signup-panel-desc">
+          Join our global community of art enthusiasts and unlock a world of
+          exclusive experiences, curated collections, and cultural events.
+        </p>
+
+        <div class="benefits-list">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>
+            </div>
+            <div class="benefit-text">
+              <div class="benefit-title">Curated Collections</div>
+              <div class="benefit-desc">Access 50,000+ artworks across all movements and mediums</div>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <div class="benefit-text">
+              <div class="benefit-title">Members-Only Previews</div>
+              <div class="benefit-desc">Early access to new exhibitions before public opening</div>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+            </div>
+            <div class="benefit-text">
+              <div class="benefit-title">Event Invitations</div>
+              <div class="benefit-desc">Priority invites to galas, artist talks, and cultural evenings</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /signup-panel -->
+
+  </main>
+
+  <script>
+    // ── Custom Cursor ──
+    const cursor = document.querySelector('.cursor');
+    const follower = document.querySelector('.cursor-follower');
+    if (cursor && follower) {
+      let mx = 0, my = 0, fx = 0, fy = 0;
+      document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.cssText = `left:${mx}px;top:${my}px`; });
+      (function animateFollower() {
+        fx += (mx - fx) * 0.12;
+        fy += (my - fy) * 0.12;
+        follower.style.cssText = `left:${fx}px;top:${fy}px`;
+        requestAnimationFrame(animateFollower);
+      })();
+    }
+
+    // ── Password toggle (main) ──
+    const eyeOpen = `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>`;
+    const eyeClosed = `<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/>`;
+
+    function setupEye(btnId, inputId, iconId) {
+      const btn = document.getElementById(btnId);
+      const input = document.getElementById(inputId);
+      const icon = document.getElementById(iconId);
+      if (btn && input) {
+        btn.addEventListener('click', () => {
+          const show = input.type === 'password';
+          input.type = show ? 'text' : 'password';
+          icon.innerHTML = show ? eyeClosed : eyeOpen;
+          btn.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+        });
+      }
+    }
+
+    setupEye('toggle-password', 'signup-password', 'eye-icon-pw');
+    setupEye('toggle-confirm-password', 'signup-confirm-password', 'eye-icon-cpw');
+
+    // ── Password Strength Meter ──
+    const pwInput = document.getElementById('signup-password');
+    const bars = [document.getElementById('bar1'), document.getElementById('bar2'), document.getElementById('bar3'), document.getElementById('bar4')];
+    const strengthLabel = document.getElementById('strength-label');
+    const strengthColors = ['active-weak', 'active-fair', 'active-good', 'active-strong'];
+    const strengthTexts = ['Weak', 'Fair', 'Good', 'Strong'];
+    const strengthTextColors = ['#e05555', '#e0a555', '#55a0e0', '#55c87c'];
+
+    function getStrength(pw) {
+      let score = 0;
+      if (pw.length >= 8) score++;
+      if (/[A-Z]/.test(pw)) score++;
+      if (/[0-9]/.test(pw)) score++;
+      if (/[^A-Za-z0-9]/.test(pw)) score++;
+      return score;
+    }
+
+    if (pwInput) {
+      pwInput.addEventListener('input', () => {
+        const val = pwInput.value;
+        const score = val.length === 0 ? 0 : getStrength(val);
+        bars.forEach((bar, i) => {
+          bar.className = 'strength-bar';
+          if (val.length > 0 && i < score) {
+            bar.classList.add(strengthColors[score - 1]);
+          }
+        });
+        if (val.length === 0) {
+          strengthLabel.textContent = '';
+          strengthLabel.style.color = '';
+        } else {
+          strengthLabel.textContent = strengthTexts[score - 1] || 'Too short';
+          strengthLabel.style.color = score > 0 ? strengthTextColors[score - 1] : 'rgba(255,255,255,0.3)';
+        }
+      });
+    }
+
+    // ── Form Validation & Submit ──
+    const signupForm = document.getElementById('signup-form');
+    const errorDiv = document.getElementById('signup-error');
+    const submitBtn = document.getElementById('signup-submit-btn');
+
+    function showError(msg) {
+      errorDiv.textContent = msg;
+      errorDiv.classList.add('show');
+    }
+
+    function hideError() {
+      errorDiv.classList.remove('show');
+    }
+
+    if (signupForm) {
+      signupForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        hideError();
+
+        const firstName = document.getElementById('signup-firstname').value.trim();
+        const lastName = document.getElementById('signup-lastname').value.trim();
+        const email = document.getElementById('signup-email').value.trim();
+        const role = document.getElementById('signup-role').value;
+        const pw = document.getElementById('signup-password').value;
+        const cpw = document.getElementById('signup-confirm-password').value;
+        const agreed = document.getElementById('agree-terms').checked;
+
+        if (!firstName || !lastName) { showError('Please enter your full name.'); return; }
+        if (!email) { showError('Please enter your email address.'); return; }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) { showError('Please enter a valid email address.'); return; }
+        if (!role) { showError('Please select your membership type.'); return; }
+        if (!pw) { showError('Please create a password.'); return; }
+        if (pw.length < 8) { showError('Password must be at least 8 characters.'); return; }
+        if (pw !== cpw) { showError('Passwords do not match. Please try again.'); return; }
+        if (!agreed) { showError('Please accept the Terms of Service and Privacy Policy to continue.'); return; }
+
+        // Loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation:spin 0.7s linear infinite"><path d="M21 12a9 9 0 1 1-6.22-8.56"/></svg>
+          Creating account…
+        `;
+        if (!document.getElementById('spin-style')) {
+          const st = document.createElement('style');
+          st.id = 'spin-style';
+          st.textContent = '@keyframes spin{to{transform:rotate(360deg)}}';
+          document.head.appendChild(st);
+        }
+
+        // Simulate account creation — replace with real API call
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `Create Account <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+          // Redirect on success:
+          // window.location.href = 'visitor-dashboard.html';
+          alert(`Welcome to MUSE, ${firstName}! Your account has been created.`);
+        }, 2000);
+      });
+    }
+
+    // ── Fade-in on load ──
+    const inner = document.querySelector('.signup-form-inner');
+    if (inner) {
+      inner.style.cssText = 'opacity:0;transform:translateY(18px)';
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          inner.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          inner.style.opacity = '1';
+          inner.style.transform = 'translateY(0)';
+        }, 80);
+      });
+    }
+  </script>
+
+</body>
+
+</html>

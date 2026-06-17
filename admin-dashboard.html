@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — Stackly Museum</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛</text></svg>">
+</head>
+
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-logo">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg>
+          STA<span>C</span>KLY
+        </a>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+            </path>
+          </svg>
+          Overview
+        </a>
+        <a href="#" class="nav-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+            </path>
+          </svg>
+          Exhibitions
+        </a>
+        <a href="#" class="nav-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+            </path>
+          </svg>
+          Collection
+        </a>
+        <a href="#" class="nav-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+            </path>
+          </svg>
+          Members
+        </a>
+        <a href="#" class="nav-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+            </path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
+            </path>
+          </svg>
+          Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="user-avatar">SR</div>
+          <div class="user-info">
+            <span class="user-name">Sarah Reed</span>
+            <span class="user-role">Administrator</span>
+          </div>
+        </div>
+        <a href="index.html" id="admin-logout-btn" class="logout-btn" aria-label="Log out">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18" height="18">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+          </svg>
+          Log Out
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-wrapper">
+
+      <!-- TOP HEADER -->
+      <header class="top-header">
+        <div style="display:flex; align-items:center; gap:16px;">
+          <button class="mobile-sidebar-toggle">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          <h1 class="page-title">Admin Overview</h1>
+        </div>
+
+        <div class="header-actions">
+          <button class="action-btn" aria-label="Notifications">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+              </path>
+            </svg>
+          </button>
+          <button class="btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">+ New Exhibition</button>
+        </div>
+      </header>
+
+      <!-- SCROLLABLE CONTENT -->
+      <div class="dashboard-content">
+<div class="dashboard-tab-pane" style="display:block;">
+
+        <!-- METRICS -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-title">Today's Visitors</span>
+              <div class="metric-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                  </path>
+                </svg></div>
+            </div>
+            <div class="metric-value">4,821</div>
+            <div class="metric-trend trend-up">↑ +12.5% from yesterday</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-title">Active Exhibitions</span>
+              <div class="metric-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                  </path>
+                </svg></div>
+            </div>
+            <div class="metric-value">6</div>
+            <div class="metric-trend trend-neutral">→ 2 ending this week</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-title">Ticket Revenue (WTD)</span>
+              <div class="metric-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                  </path>
+                </svg></div>
+            </div>
+            <div class="metric-value">$142,500</div>
+            <div class="metric-trend trend-up">↑ +5.2% vs last week</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-title">New Members</span>
+              <div class="metric-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z">
+                  </path>
+                </svg></div>
+            </div>
+            <div class="metric-value">128</div>
+            <div class="metric-trend trend-up">↑ +18% this month</div>
+          </div>
+        </div>
+
+        <!-- TABLE -->
+        <section class="data-section">
+          <div class="data-section-header">
+            <h2 class="data-section-title">Current Exhibitions Status</h2>
+            <a href="#" style="color:var(--gold); font-size:0.85rem; text-decoration:none;">View All</a>
+          </div>
+          <table class="dashboard-table">
+            <thead>
+              <tr>
+                <th>Exhibition Name</th>
+                <th>Location</th>
+                <th>End Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Geometric Visions: Form &amp; Abstraction</td>
+                <td>Main Hall A</td>
+                <td>Mar 30, 2026</td>
+                <td><span class="status-badge status-active">Active</span></td>
+                <td><button class="action-btn" style="width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor">
+                      <circle cx="12" cy="12" r="1"></circle>
+                      <circle cx="19" cy="12" r="1"></circle>
+                      <circle cx="5" cy="12" r="1"></circle>
+                    </svg></button></td>
+              </tr>
+              <tr>
+                <td>Impressionist Dreams</td>
+                <td>Gallery B</td>
+                <td>Apr 15, 2026</td>
+                <td><span class="status-badge status-active">Active</span></td>
+                <td><button class="action-btn" style="width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor">
+                      <circle cx="12" cy="12" r="1"></circle>
+                      <circle cx="19" cy="12" r="1"></circle>
+                      <circle cx="5" cy="12" r="1"></circle>
+                    </svg></button></td>
+              </tr>
+              <tr>
+                <td>Cosmos &amp; Consciousness</td>
+                <td>Modern Wing</td>
+                <td>May 01, 2026</td>
+                <td><span class="status-badge status-active">Active</span></td>
+                <td><button class="action-btn" style="width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor">
+                      <circle cx="12" cy="12" r="1"></circle>
+                      <circle cx="19" cy="12" r="1"></circle>
+                      <circle cx="5" cy="12" r="1"></circle>
+                    </svg></button></td>
+              </tr>
+              <tr>
+                <td>Nature Reborn: Digital Ecology</td>
+                <td>Media Lab</td>
+                <td>Jul 15, 2026</td>
+                <td><span class="status-badge status-pending">Pending Setup</span></td>
+                <td><button class="action-btn" style="width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor">
+                      <circle cx="12" cy="12" r="1"></circle>
+                      <circle cx="19" cy="12" r="1"></circle>
+                      <circle cx="5" cy="12" r="1"></circle>
+                    </svg></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+      </div>
+</div>
+
+<div class="dashboard-tab-pane" style="display:none;">
+
+      <div class="data-section" style="margin-bottom: 2rem;">
+        <div class="data-section-header">
+          <h2 class="data-section-title">Active Exhibitions</h2>
+          <button class="btn-primary" style="padding: 6px 12px; font-size: 0.8rem;">+ Add New</button>
+        </div>
+        <table class="dashboard-table">
+          <thead>
+            <tr><th>Exhibition Name</th><th>Curator</th><th>Status</th><th>Actions</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Geometric Visions</td><td>Sarah Jenkins</td><td><span class="status-badge status-active">Active</span></td><td><a href="#" style="color:var(--gold);">Edit</a></td></tr>
+            <tr><td>Impressionist Dreams</td><td>Michael Chen</td><td><span class="status-badge status-active">Active</span></td><td><a href="#" style="color:var(--gold);">Edit</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="data-section">
+        <div class="data-section-header">
+          <h2 class="data-section-title">Upcoming &amp; Past Exhibitions</h2>
+        </div>
+        <table class="dashboard-table">
+          <thead>
+            <tr><th>Exhibition Name</th><th>Date</th><th>Status</th><th>Actions</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Digital Horizons</td><td>Oct 2026</td><td><span class="status-badge status-pending" style="background: rgba(255, 152, 0, 0.1); color: #FF9800; border-color: rgba(255, 152, 0, 0.2);">Upcoming</span></td><td><a href="#" style="color:var(--gold);">Edit</a></td></tr>
+            <tr><td>Renaissance Revival</td><td>Feb 2025</td><td><span class="status-badge" style="background: rgba(158, 158, 158, 0.1); color: #9E9E9E; border-color: rgba(158, 158, 158, 0.2);">Archived</span></td><td><a href="#" style="color:var(--gold);">View</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    
+</div>
+
+<div class="dashboard-tab-pane" style="display:none;">
+
+      <div class="data-section" style="margin-bottom: 2rem;">
+        <div class="data-section-header">
+          <h2 class="data-section-title">Featured Artworks</h2>
+          <button class="btn-primary" style="padding: 6px 12px; font-size: 0.8rem;">+ Add Artwork</button>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-top: 1rem;">
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px;">
+            <div style="height: 120px; background: #333; border-radius: 4px; margin-bottom: 12px;"></div>
+            <h3 style="font-size: 1rem; margin-bottom: 4px;">Starry Night</h3>
+            <p style="font-size: 0.8rem; color: #888;">Vincent van Gogh, 1889</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px;">
+            <div style="height: 120px; background: #333; border-radius: 4px; margin-bottom: 12px;"></div>
+            <h3 style="font-size: 1rem; margin-bottom: 4px;">The Persistence of Memory</h3>
+            <p style="font-size: 0.8rem; color: #888;">Salvador Dalí, 1931</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="data-section">
+        <div class="data-section-header">
+          <h2 class="data-section-title">Archived Collection</h2>
+        </div>
+        <table class="dashboard-table" style="margin-top: 1rem;">
+          <thead>
+            <tr>
+              <th>Artwork Name</th>
+              <th>Artist</th>
+              <th>Acquisition Year</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bronze Figurine</td>
+              <td>Unknown</td>
+              <td>1998</td>
+              <td>Storage Vault B</td>
+            </tr>
+            <tr>
+              <td>Ceramic Vase</td>
+              <td>Ming Dynasty</td>
+              <td>2005</td>
+              <td>Conservation Lab</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+    
+</div>
+
+<div class="dashboard-tab-pane" style="display:none;">
+
+      <div class="data-section" style="margin-bottom: 2rem;">
+        <div class="data-section-header">
+          <h2 class="data-section-title">Membership Insights</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin-top: 1rem;">
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; text-align: center;">
+            <h3 style="font-size: 2rem; color: var(--gold); margin-bottom: 4px;">1,248</h3>
+            <p style="font-size: 0.85rem; color: #888;">Total Active Members</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; text-align: center;">
+            <h3 style="font-size: 2rem; color: var(--gold); margin-bottom: 4px;">+12%</h3>
+            <p style="font-size: 0.85rem; color: #888;">Growth This Month</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="data-section" style="margin-bottom: 2rem;">
+        <div class="data-section-header">
+          <h2 class="data-section-title">Premium Members</h2>
+          <button class="btn-primary" style="padding: 6px 12px; font-size: 0.8rem;">Export List</button>
+        </div>
+        <table class="dashboard-table">
+          <thead>
+            <tr><th>Name</th><th>Email</th><th>Join Date</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Jane Doe</td><td>jane@example.com</td><td>Jan 12, 2026</td><td><span class="status-badge status-active">Active</span></td></tr>
+            <tr><td>Alice Johnson</td><td>alice@example.com</td><td>Mar 20, 2026</td><td><span class="status-badge status-active">Active</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="data-section">
+        <div class="data-section-header">
+          <h2 class="data-section-title">Basic Members</h2>
+        </div>
+        <table class="dashboard-table">
+          <thead>
+            <tr><th>Name</th><th>Email</th><th>Join Date</th><th>Actions</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>John Smith</td><td>john@example.com</td><td>Feb 05, 2026</td><td><a href="#" style="color:var(--gold);">Upgrade</a></td></tr>
+            <tr><td>Robert Paulson</td><td>robert@example.com</td><td>Apr 14, 2026</td><td><a href="#" style="color:var(--gold);">Upgrade</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    
+</div>
+
+<div class="dashboard-tab-pane" style="display:none;">
+
+      <div class="data-section" style="margin-bottom: 2rem;">
+        <div class="data-section-header">
+          <h2 class="data-section-title">General Information</h2>
+        </div>
+        <form style="display: flex; flex-direction: column; gap: 16px; max-width: 500px; margin-top: 1rem;">
+          <div>
+            <label style="display: block; margin-bottom: 8px; font-size: 0.85rem; color: #aaa;">Museum Name</label>
+            <input type="text" value="MUSE Museum" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 4px;">
+          </div>
+          <div>
+            <label style="display: block; margin-bottom: 8px; font-size: 0.85rem; color: #aaa;">Contact Email</label>
+            <input type="email" value="contact@musemuseum.com" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 4px;">
+          </div>
+          <button type="button" class="btn-primary" style="padding: 10px; width: fit-content;">Save Changes</button>
+        </form>
+      </div>
+
+      <div class="data-section">
+        <div class="data-section-header">
+          <h2 class="data-section-title">Operating Hours</h2>
+        </div>
+        <form style="display: flex; flex-direction: column; gap: 16px; max-width: 500px; margin-top: 1rem;">
+          <div style="display: flex; gap: 16px;">
+            <div style="flex: 1;">
+              <label style="display: block; margin-bottom: 8px; font-size: 0.85rem; color: #aaa;">Opening Time</label>
+              <input type="time" value="10:00" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 4px;">
+            </div>
+            <div style="flex: 1;">
+              <label style="display: block; margin-bottom: 8px; font-size: 0.85rem; color: #aaa;">Closing Time</label>
+              <input type="time" value="18:00" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 4px;">
+            </div>
+          </div>
+          <button type="button" class="btn-primary" style="padding: 10px; width: fit-content;">Update Hours</button>
+        </form>
+      </div>
+    
+</div>
+
+</div>
+    </main>
+  </div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navItems = document.querySelectorAll('.sidebar-nav .nav-item');
+    const dashboardContent = document.querySelector('.dashboard-content');
+    const pageTitle = document.querySelector('.page-title');
+    
+    if (!dashboardContent || navItems.length === 0) return;
+
+    // Use our hardcoded tabs
+    const panes = document.querySelectorAll('.dashboard-tab-pane');
+
+    navItems.forEach((item, index) => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        navItems.forEach(n => n.classList.remove('active'));
+        item.classList.add('active');
+        
+        if (pageTitle) {
+          pageTitle.textContent = item.textContent.trim();
+        }
+
+        panes.forEach((p, i) => {
+          p.style.display = i === index ? 'block' : 'none';
+        });
+        
+        const sidebar = document.querySelector('.dashboard-sidebar');
+        if (sidebar && window.innerWidth <= 768) {
+          sidebar.classList.remove('open');
+        }
+      });
+    });
+
+    const mobileToggle = document.querySelector('.mobile-sidebar-toggle');
+    const sidebar = document.querySelector('.dashboard-sidebar');
+    if (mobileToggle && sidebar) {
+      mobileToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
+    }
+  });
+</script>
+
+</body>
+
+</html>

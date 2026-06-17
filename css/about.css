@@ -1,0 +1,300 @@
+/* ================================================
+   ABOUT PAGE SPECIFIC STYLES
+   ================================================ */
+
+/* Mission & Values */
+#mission {
+  background: var(--black);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  max-width: 1400px;
+  margin: 0 auto 80px;
+}
+
+.mission-statement {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: var(--white-pure);
+  line-height: 1.2;
+}
+
+.mission-statement em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.value-card {
+  padding: 40px 32px;
+  background: var(--dark-2);
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--gold);
+}
+
+.value-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(201, 168, 76, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+
+.value-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+}
+
+.value-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--white-pure);
+  margin-bottom: 12px;
+}
+
+.value-text {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+/* Architecture / History */
+#architecture {
+  padding: 0;
+  position: relative;
+  height: 80vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.arch-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/hero.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  filter: grayscale(80%) brightness(0.3);
+  z-index: 0;
+}
+
+.arch-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin-left: 10vw;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(15px);
+  padding: 60px;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+/* Leadership Grid */
+#leadership {
+  background: var(--dark);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.team-card {
+  text-align: center;
+}
+
+.team-img-wrap {
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: var(--dark-2);
+  position: relative;
+}
+
+.team-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.team-card:hover .team-img-wrap img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Fallback CSS portraits for team */
+.team-css-portrait {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.team-css-portrait::after {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 160px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent);
+  border-radius: 50% 50% 0 0;
+  bottom: 0;
+}
+
+.team-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--white-pure);
+  margin-bottom: 4px;
+}
+
+.team-role {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Conservation */
+#conservation {
+  background: var(--black);
+}
+
+.conservation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.conservation-grid .about-content {
+  order: 1;
+}
+
+.conservation-grid .about-image-wrapper {
+  order: 2;
+}
+
+/* Education / Community */
+#education {
+  background: var(--dark-2);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.edu-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.edu-card {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+}
+
+.edu-card-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  z-index: 0;
+  transition: transform 0.6s ease;
+}
+
+.edu-card:hover .edu-card-bg {
+  transform: scale(1.05);
+}
+
+.edu-card-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 100%);
+}
+
+.edu-card-content {
+  position: relative;
+  z-index: 1;
+}
+
+.edu-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.edu-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--white-pure);
+  margin-bottom: 12px;
+}
+
+.edu-text {
+  font-size: 0.9rem;
+  color: var(--gray-light);
+  line-height: 1.6;
+  max-width: 80%;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .mission-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .values-grid { grid-template-columns: 1fr; }
+  .conservation-grid { grid-template-columns: 1fr; gap: 40px; }
+  .conservation-grid .about-content { order: 2; }
+  .conservation-grid .about-image-wrapper { order: 1; }
+  .edu-cards { grid-template-columns: 1fr; }
+  .arch-content { margin: 0 24px; padding: 40px 24px; }
+}

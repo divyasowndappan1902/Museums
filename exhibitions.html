@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exhibitions & Artists — Stackly Museum</title>
+  <meta name="description" content="Explore current, upcoming, and virtual exhibitions at MUSE Museum.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/exhibitions.css">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛</text></svg>">
+</head>
+
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <button id="mobile-menu-close" aria-label="Close menu"
+      style="position:absolute;top:32px;right:32px;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;">✕</button>
+    <nav class="mobile-menu-links">
+      <a href="index.html" class="mobile-menu-link">Home</a>
+      <a href="about.html" class="mobile-menu-link">About</a>
+      <a href="exhibitions.html" class="mobile-menu-link">Exhibitions</a>
+      <a href="gallery.html" class="mobile-menu-link">Gallery</a>
+      <a href="index.html#signin" class="mobile-menu-link">Sign In</a>
+    </nav>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header id="navbar" role="banner">
+    <a href="index.html" class="nav-logo" aria-label="Stackly Museum Home">STA<span>C</span>KLY</a>
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="exhibitions.html" class="active-nav">Exhibitions</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="index.html#signin" class="nav-cta">Sign In</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="section-eyebrow reveal" style="justify-content:center;">
+      <div class="section-eyebrow-line"></div>
+      <span class="section-eyebrow-text">Programs</span>
+    </div>
+    <h1 class="page-hero-title reveal delay-1">Exhibitions & <em>Artists</em></h1>
+    <p class="page-hero-subtitle reveal delay-2">Immerse yourself in our curated selection of contemporary art
+      installations, classical showcases, and features on visionary creators.</p>
+  </div>
+
+  <!-- SECTION 1: SPOTLIGHT / CURATOR'S CHOICE -->
+  <section id="spotlight">
+    <div class="spotlight-grid">
+      <div class="spotlight-content reveal-left">
+        <div class="section-eyebrow">
+          <div class="section-eyebrow-line"></div>
+          <span class="section-eyebrow-text">Curator's Spotlight</span>
+        </div>
+        <h3>The Silent Symphony: <br><em>Works of Isamu Noguchi</em></h3>
+        <p class="spotlight-curator">Curated by Marcus Reed</p>
+        <p style="color: var(--gray-light); line-height: 1.8; margin-bottom: 32px;">
+          An unprecedented retrospective exploring the delicate balance of space, form, and material in Noguchi's
+          sculptural masterpieces. This exclusive exhibition brings together over 50 works from private collections
+          globally, presented in a uniquely designed minimalist gallery space.
+        </p>
+        <a href="#visit" class="btn-primary">
+          <span>Book Spotlight Tickets</span>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="spotlight-image-wrap reveal-right">
+        <div class="spotlight-badge">Closing Soon</div>
+        <!-- Using a CSS synthetic image representing a sleek sculpture space -->
+        <div
+          style="width:100%; height:100%; background: linear-gradient(160deg, #111 0%, #222 50%, #0a0a0a 100%); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+          <div
+            style="width:120px; height:300px; background:linear-gradient(to right, rgba(201,168,76,0.2), transparent); border-radius:100px 100px 0 0; transform:skewX(-5deg);">
+          </div>
+          <div
+            style="position:absolute; bottom:0; left:0; width:100%; height:40px; background:rgba(255,255,255,0.05); transform:skewY(-2deg);">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: CURRENT EXHIBITIONS -->
+  <section id="exhibitions">
+    <div class="exhibitions-header">
+      <div>
+        <div class="section-eyebrow reveal">
+          <div class="section-eyebrow-line"></div>
+          <span class="section-eyebrow-text">On View</span>
+        </div>
+        <h2 class="section-title reveal delay-1">Current <em>Exhibitions</em></h2>
+      </div>
+    </div>
+    <div class="exhibitions-grid">
+      <article class="exhibition-card reveal" tabindex="0" role="article">
+        <img src="images/artwork1.png" alt="Geometric Visions exhibition artwork" class="exhibition-card-image"
+          loading="lazy">
+        <div class="exhibition-card-overlay">
+          <span class="exhibition-card-tag">Featured</span>
+          <h3 class="exhibition-card-title">Geometric Visions: Form & Abstraction</h3>
+          <p class="exhibition-card-date">15 Jan – 30 Mar 2026</p>
+        </div>
+      </article>
+
+      <article class="exhibition-card reveal delay-1" tabindex="0" role="article">
+        <img src="images/artwork2.png" alt="Impressionist Dreams exhibition" class="exhibition-card-image"
+          loading="lazy">
+        <div class="exhibition-card-overlay">
+          <span class="exhibition-card-tag">Impressionism</span>
+          <h3 class="exhibition-card-title">Impressionist Dreams</h3>
+          <p class="exhibition-card-date">1 Feb – 15 Apr 2026</p>
+        </div>
+      </article>
+
+      <article class="exhibition-card reveal delay-2" tabindex="0" role="article" style="overflow:hidden;">
+        <div
+          style="width:100%; height:320px; background: linear-gradient(135deg, #0a0a1e 0%, #1a0a2e 40%, #0e1a3a 100%); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+          <div
+            style="position:absolute;width:200px;height:200px;border-radius:50%;border:1px solid rgba(201,168,76,0.25);">
+          </div>
+        </div>
+        <div class="exhibition-card-overlay">
+          <span class="exhibition-card-tag">Installation</span>
+          <h3 class="exhibition-card-title">Cosmos & Consciousness</h3>
+          <p class="exhibition-card-date">20 Feb – 1 May 2026</p>
+        </div>
+      </article>
+
+      <article class="exhibition-card reveal delay-3" tabindex="0" role="article" style="overflow:hidden;">
+        <div
+          style="width:100%; height:320px; background: linear-gradient(135deg, #1e0a0a 0%, #3d1010 50%, #200d0d 100%); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+          <div
+            style="font-family:'Playfair Display',serif;font-size:5rem;color:rgba(201,168,76,0.12);font-weight:900;position:relative;">
+            IX</div>
+        </div>
+        <div class="exhibition-card-overlay">
+          <span class="exhibition-card-tag">Photography</span>
+          <h3 class="exhibition-card-title">Shadows & Light: A Retrospective</h3>
+          <p class="exhibition-card-date">5 Mar – 20 Jun 2026</p>
+        </div>
+      </article>
+
+      <article class="exhibition-card reveal delay-4" tabindex="0" role="article" style="overflow:hidden;">
+        <div
+          style="width:100%; height:320px; background: radial-gradient(ellipse at center, #0d2a1a 0%, #071a0d 100%); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+          <div
+            style="position:absolute;width:180px;height:180px;background:linear-gradient(135deg,rgba(50,140,80,0.15),transparent);transform:rotate(30deg);border:1px solid rgba(50,140,80,0.2);">
+          </div>
+        </div>
+        <div class="exhibition-card-overlay">
+          <span class="exhibition-card-tag">New Media</span>
+          <h3 class="exhibition-card-title">Nature Reborn: Digital Ecology</h3>
+          <p class="exhibition-card-date">10 Apr – 15 Jul 2026</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECTION 3: UPCOMING EXHIBITIONS -->
+  <section id="upcoming">
+    <div style="text-align: center; margin-bottom: 64px;">
+      <div class="section-eyebrow reveal" style="justify-content: center;">
+        <div class="section-eyebrow-line"></div>
+        <span class="section-eyebrow-text">Coming Soon</span>
+      </div>
+      <h2 class="section-title reveal delay-1">Upcoming <em>Programs</em></h2>
+    </div>
+
+    <div class="upcoming-list">
+      <div class="upcoming-item reveal">
+        <div class="upcoming-date">
+          <div class="upcoming-month">Opening August</div>
+          <div class="upcoming-year">2026</div>
+        </div>
+        <div class="upcoming-info">
+          <h3>The Renaissance Reimagined</h3>
+          <p>A daring juxtaposition of classic 16th-century Italian masterpieces with modern AI-generated
+            interpretations.</p>
+        </div>
+        <a href="#" class="btn-outline">Preview</a>
+      </div>
+
+      <div class="upcoming-item reveal delay-1">
+        <div class="upcoming-date">
+          <div class="upcoming-month">Opening October</div>
+          <div class="upcoming-year">2026</div>
+        </div>
+        <div class="upcoming-info">
+          <h3>Echoes of the Earth</h3>
+          <p>An immersive audio-visual exhibition focusing on climate change, featuring works from 40 indigenous artists
+            globally.</p>
+        </div>
+        <a href="#" class="btn-outline">Preview</a>
+      </div>
+
+      <div class="upcoming-item reveal delay-2">
+        <div class="upcoming-date">
+          <div class="upcoming-month">Opening January</div>
+          <div class="upcoming-year">2027</div>
+        </div>
+        <div class="upcoming-info">
+          <h3>Neon Horizons: Cyberpunk Art</h3>
+          <p>Exploring the aesthetics of futuristic dystopias through neon light installations and kinetic sculptures.
+          </p>
+        </div>
+        <a href="#" class="btn-outline">Preview</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: VIRTUAL TOURS -->
+  <section id="virtual">
+    <div style="margin-bottom: 64px;">
+      <div class="section-eyebrow reveal">
+        <div class="section-eyebrow-line"></div>
+        <span class="section-eyebrow-text">Digital Access</span>
+      </div>
+      <h2 class="section-title reveal delay-1">Virtual <em>Exhibitions</em></h2>
+      <p style="color:var(--gray-light); margin-top:16px;" class="reveal delay-2">Experience MUSE from anywhere in the
+        world through our high-definition 360° virtual tours.</p>
+    </div>
+
+    <div class="virtual-grid">
+      <div class="virtual-card reveal delay-1">
+        <img src="images/exhibition.png" alt="Grand Hall Virtual Tour" loading="lazy">
+        <div class="virtual-overlay">
+          <div class="play-btn">
+            <svg viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+          <h3 class="virtual-title">The Grand Hall</h3>
+        </div>
+      </div>
+
+      <div class="virtual-card reveal delay-2">
+        <img src="images/artwork1.png" alt="Modern Wing Virtual Tour" loading="lazy">
+        <div class="virtual-overlay">
+          <div class="play-btn">
+            <svg viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+          <h3 class="virtual-title">The Modern Wing</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: FEATURED ARTISTS -->
+  <section id="artists">
+    <div class="artists-header">
+      <div>
+        <div class="section-eyebrow reveal">
+          <div class="section-eyebrow-line"></div>
+          <span class="section-eyebrow-text">The Creators</span>
+        </div>
+        <h2 class="section-title reveal delay-1">Featured <em>Artists</em></h2>
+      </div>
+    </div>
+    <div class="artists-grid">
+      <article class="artist-card reveal delay-1" tabindex="0">
+        <div class="artist-card-image-wrap">
+          <img src="images/artist1.png" alt="Elena Marchetti, painter" class="artist-card-image" loading="lazy">
+          <div class="artist-card-overlay" aria-hidden="true"></div>
+          <div class="artist-card-number" aria-hidden="true">01</div>
+        </div>
+        <div class="artist-card-info">
+          <span class="artist-card-tag">Painter — Italy</span>
+          <h3 class="artist-card-name">Elena Marchetti</h3>
+          <p class="artist-card-bio">A master of atmospheric oil painting, Elena's work explores the tension between
+            memory and place, drawing from the Italian countryside of her youth.</p>
+        </div>
+      </article>
+
+      <article class="artist-card reveal delay-2" tabindex="0">
+        <div class="artist-card-image-wrap">
+          <img src="images/artist2.png" alt="Marcus Chen, sculptor" class="artist-card-image" loading="lazy">
+          <div class="artist-card-overlay" aria-hidden="true"></div>
+          <div class="artist-card-number" aria-hidden="true">02</div>
+        </div>
+        <div class="artist-card-info">
+          <span class="artist-card-tag">Sculptor — USA</span>
+          <h3 class="artist-card-name">Marcus Chen</h3>
+          <p class="artist-card-bio">Working with bronze, steel, and reclaimed materials, Marcus creates sculptures that
+            interrogate the boundary between the organic and the industrial.</p>
+        </div>
+      </article>
+
+      <article class="artist-card reveal delay-3" tabindex="0">
+        <div class="artist-card-image-wrap">
+          <div
+            style="width:100%; height:440px; background: linear-gradient(160deg, #0a0a14 0%, #14082a 40%, #0a1428 100%); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+            <div
+              style="position:absolute;width:160px;height:200px;border-radius:50% 50% 45% 45%;background:linear-gradient(160deg,rgba(201,168,76,0.18),rgba(80,60,120,0.3));top:30px;left:50%;transform:translateX(-50%);">
+            </div>
+          </div>
+          <div class="artist-card-overlay" aria-hidden="true"></div>
+          <div class="artist-card-number" aria-hidden="true">03</div>
+        </div>
+        <div class="artist-card-info">
+          <span class="artist-card-tag">Digital Artist — Japan</span>
+          <h3 class="artist-card-name">Yuki Tanaka</h3>
+          <p class="artist-card-bio">A pioneer of immersive digital art, Yuki's installations dissolve the boundary
+            between viewer and artwork. Using AI and generative algorithms.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECTION 6: PAST EXHIBITIONS ARCHIVE -->
+  <section id="archive">
+    <div style="text-align: center; margin-bottom: 64px;">
+      <div class="section-eyebrow reveal" style="justify-content: center;">
+        <div class="section-eyebrow-line"></div>
+        <span class="section-eyebrow-text">History</span>
+      </div>
+      <h2 class="section-title reveal delay-1">Exhibition <em>Archive</em></h2>
+    </div>
+
+    <table class="archive-table reveal delay-2">
+      <tbody>
+        <tr>
+          <td>2025</td>
+          <td>The Space Between: Modern Minimalism</td>
+          <td>Main Gallery</td>
+          <td>View Details →</td>
+        </tr>
+        <tr>
+          <td>2025</td>
+          <td>Portraits of Power: A Century of Photography</td>
+          <td>Gallery B</td>
+          <td>View Details →</td>
+        </tr>
+        <tr>
+          <td>2024</td>
+          <td>Kinetic Forces: Art in Motion</td>
+          <td>Sculpture Hall</td>
+          <td>View Details →</td>
+        </tr>
+        <tr>
+          <td>2024</td>
+          <td>Beyond the Canvas: The Digital Revolution</td>
+          <td>Media Wing</td>
+          <td>View Details →</td>
+        </tr>
+        <tr>
+          <td>2023</td>
+          <td>Centennial Exhibition: 100 Years of MUSE</td>
+          <td>All Galleries</td>
+          <td>View Details →</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">M<span>U</span>SE</div>
+        <p class="footer-tagline">Where Art Meets Eternity</p>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Explore</h3>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link">About</a></li>
+          <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Visit</h3>
+        <ul class="footer-links">
+          <li><a href="index.html#visit" class="footer-link">Tickets & Admission</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Contact</h3>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📍</span>
+          <span class="footer-contact-text">1011 Fifth Avenue<br>New York, NY 10028</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2026 MUSE Museum. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUSE — Museum of Modern & Contemporary Art</title>
+  <meta name="description"
+    content="MUSE is a premier museum of modern and contemporary art, showcasing extraordinary exhibitions, world-renowned artists, and immersive cultural experiences.">
+  <meta name="keywords" content="museum, art, exhibition, contemporary art, modern art, artists, gallery, culture">
+  <meta property="og:title" content="MUSE — Museum of Modern & Contemporary Art">
+  <meta property="og:description"
+    content="Discover extraordinary exhibitions, world-renowned artists, and immersive cultural experiences at MUSE.">
+  <meta property="og:type" content="website">
+
+  <!-- Preload Key Resources -->
+  <link rel="preload" href="images/hero.png" as="image">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/auth.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛</text></svg>">
+</head>
+
+<body>
+
+  <!-- ==========================================
+       LOADER
+       ========================================== -->
+  <div id="loader">
+    <div class="loader-logo">Stackly</div>
+    <div class="loader-line"></div>
+  </div>
+
+  <!-- ==========================================
+       CUSTOM CURSOR
+       ========================================== -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- ==========================================
+       LIGHTBOX
+       ========================================== -->
+  <div id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">✕</button>
+      <img id="lightbox-img" src="" alt="Gallery artwork">
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MOBILE MENU
+       ========================================== -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <button id="mobile-menu-close" aria-label="Close menu"
+      style="position:absolute;top:32px;right:32px;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;">✕</button>
+    <nav class="mobile-menu-links">
+      <a href="index.html" class="mobile-menu-link">Home</a>
+      <a href="about.html" class="mobile-menu-link">About</a>
+      <a href="exhibitions.html" class="mobile-menu-link">Exhibitions</a>
+      <a href="gallery.html" class="mobile-menu-link">Gallery</a>
+      <a href="#" class="mobile-menu-link" id="mobile-signin-trigger">Sign In</a>
+    </nav>
+  </div>
+
+  <!-- ==========================================
+       NAVIGATION
+       ========================================== -->
+  <header id="navbar" role="banner">
+    <a href="#" class="nav-logo" aria-label="MUSE Museum Home">STA<span>C</span>KLY</a>
+
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="#" class="nav-cta" id="signin-trigger">Sign In</a>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- ==========================================
+       HERO SECTION
+       ========================================== -->
+  <section id="hero" aria-label="Hero - Museum Welcome">
+    <div class="hero-bg" role="img" aria-label="Museum interior with golden columns"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span class="hero-eyebrow-text">Est. 1923 — New York City</span>
+      </div>
+
+      <h1 class="hero-title">
+        Where Art<br>
+        <em>Transcends</em><br>
+        Time
+      </h1>
+
+      <p class="hero-subtitle hero-scramble">Where Art Meets Eternity</p>
+
+      <div class="hero-actions">
+        <a href="exhibitions.html" class="btn-primary" id="hero-explore-btn">
+          <span>Explore Exhibitions</span>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="#visit" class="btn-outline" id="hero-tickets-btn">
+          <span>Get Tickets</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-stats" aria-label="Museum statistics">
+      <div class="hero-stat">
+        <div class="hero-stat-number" data-count="50000" data-suffix="+">0</div>
+        <div class="hero-stat-label">Artworks</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number" data-count="200" data-suffix="+">0</div>
+        <div class="hero-stat-label">Artists</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number" data-count="100" data-suffix="">0</div>
+        <div class="hero-stat-label">Years Legacy</div>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="hero-scroll-line"></div>
+      <div class="hero-scroll-text">Scroll</div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       MARQUEE
+       ========================================== -->
+  <div class="marquee-section" aria-hidden="true">
+    <div class="marquee-track">
+      <!-- First set -->
+      <div class="marquee-item"><span class="marquee-item-text">Contemporary Art</span><span
+          class="marquee-item-dot"></span></div>
+      <div class="marquee-item"><span class="marquee-item-text">Modern Sculpture</span><span
+          class="marquee-item-dot"></span></div>
+      <div class="marquee-item"><span class="marquee-item-text">Photography</span><span class="marquee-item-dot"></span>
+      </div>
+      <div class="marquee-item"><span class="marquee-item-text">Digital Installations</span><span
+          class="marquee-item-dot"></span></div>
+      <div class="marquee-item"><span class="marquee-item-text">Classical Masters</span><span
+          class="marquee-item-dot"></span></div>
+      <div class="marquee-item"><span class="marquee-item-text">Impressionism</span><span
+          class="marquee-item-dot"></span></div>
+      <div class="marquee-item"><span class="marquee-item-text">Abstract Expressionism</span><span
+          class="marquee-item-dot"></span></div>
+      <div class="marquee-item"><span class="marquee-item-text">Avant-garde</span><span class="marquee-item-dot"></span>
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="marquee-item"><span class="marquee-item-text">Contemporary Art</span><span
+          class="marquee-item-dot"></span></div>
+      <div class="marquee-item"><span class="marquee-item-text">Modern Sculpture</span><span
+          class="marquee-item-dot"></span></div>
+      <div class="marquee-item"><span class="marquee-item-text">Photography</span><span class="marquee-item-dot"></span>
+      </div>
+      <div class="marquee-item"><span class="marquee-item-text">Digital Installations</span><span
+          class="marquee-item-dot"></span></div>
+      <div class="marquee-item"><span class="marquee-item-text">Classical Masters</span><span
+          class="marquee-item-dot"></span></div>
+      <div class="marquee-item"><span class="marquee-item-text">Impressionism</span><span
+          class="marquee-item-dot"></span></div>
+      <div class="marquee-item"><span class="marquee-item-text">Abstract Expressionism</span><span
+          class="marquee-item-dot"></span></div>
+      <div class="marquee-item"><span class="marquee-item-text">Avant-garde</span><span class="marquee-item-dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       ABOUT SECTION
+       ========================================== -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-image-wrapper reveal-left">
+        <img src="images/exhibition.png" alt="MUSE Museum grand exhibition hall" class="about-image" loading="lazy">
+        <div class="about-image-frame" aria-hidden="true"></div>
+        <div class="about-badge" aria-label="100 years of legacy">
+          <div class="about-badge-number">100</div>
+          <div class="about-badge-text">Years of Legacy</div>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <div class="section-eyebrow reveal">
+          <div class="section-eyebrow-line"></div>
+          <span class="section-eyebrow-text">Our Story</span>
+        </div>
+
+        <h2 class="section-title reveal delay-1">
+          A Century of<br>
+          <em>Artistic Excellence</em>
+        </h2>
+
+        <p class="about-description reveal delay-2">
+          Founded in 1923, MUSE has been a beacon of cultural enlightenment for over a century,
+          housing one of the world's most significant collections of modern and contemporary art.
+        </p>
+
+        <p class="about-text reveal delay-3">
+          From the hallowed halls of our founding collection to the boundary-pushing installations
+          of today's most provocative artists, MUSE remains committed to fostering dialogue between
+          art and humanity. Our curators work tirelessly to bring transformative experiences to
+          visitors from every corner of the globe, ensuring that the power of art continues to
+          illuminate the human condition.
+        </p>
+
+        <div class="about-stats reveal delay-4">
+          <div class="about-stat-item">
+            <div class="about-stat-number" data-count="50000" data-suffix="+">0</div>
+            <div class="about-stat-label">Artworks</div>
+          </div>
+          <div class="about-stat-item">
+            <div class="about-stat-number" data-count="3200000" data-suffix="+">0</div>
+            <div class="about-stat-label">Annual Visitors</div>
+          </div>
+          <div class="about-stat-item">
+            <div class="about-stat-number" data-count="48" data-suffix="">0</div>
+            <div class="about-stat-label">Galleries</div>
+          </div>
+        </div>
+
+        <a href="#exhibitions" class="btn-primary reveal delay-5">
+          <span>Explore Collections</span>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       EXHIBITIONS SECTION
+       ========================================== -->
+  <section id="exhibitions">
+    <div class="exhibitions-header">
+      <div>
+        <div class="section-eyebrow reveal">
+          <div class="section-eyebrow-line"></div>
+          <span class="section-eyebrow-text">On View</span>
+        </div>
+        <h2 class="section-title reveal delay-1">Current <em>Exhibitions</em></h2>
+      </div>
+      <a href="#" class="btn-outline reveal delay-2" id="view-all-exhibitions-btn">View All</a>
+    </div>
+
+    <div class="exhibitions-grid">
+      <!-- Featured large card -->
+      <article class="exhibition-card" id="exhibition-card-1" tabindex="0" role="article">
+        <img src="images/artwork1.png" alt="Geometric Visions exhibition artwork" class="exhibition-card-image"
+          loading="lazy">
+        <div class="exhibition-card-overlay">
+          <span class="exhibition-card-tag">Featured</span>
+          <h3 class="exhibition-card-title">Geometric Visions: Form & Abstraction</h3>
+          <p class="exhibition-card-date">15 Jan – 30 Mar 2026</p>
+        </div>
+        <div class="exhibition-card-arrow" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M7 17L17 7M17 7H7M17 7v10" />
+          </svg>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="exhibition-card" id="exhibition-card-2" tabindex="0" role="article">
+        <img src="images/artwork2.png" alt="Impressionist Dreams exhibition" class="exhibition-card-image"
+          loading="lazy">
+        <div class="exhibition-card-overlay">
+          <span class="exhibition-card-tag">Impressionism</span>
+          <h3 class="exhibition-card-title">Impressionist Dreams</h3>
+          <p class="exhibition-card-date">1 Feb – 15 Apr 2026</p>
+        </div>
+        <div class="exhibition-card-arrow" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M7 17L17 7M17 7H7M17 7v10" />
+          </svg>
+        </div>
+      </article>
+
+      <!-- Card 3 - CSS art -->
+      <article class="exhibition-card" id="exhibition-card-3" tabindex="0" role="article" style="overflow:hidden;">
+        <div style="
+          width:100%; height:320px;
+          background: linear-gradient(135deg, #0a0a1e 0%, #1a0a2e 40%, #0e1a3a 100%);
+          display:flex; align-items:center; justify-content:center;
+          position:relative; overflow:hidden;
+        ">
+          <!-- Decorative circles -->
+          <div
+            style="position:absolute;width:200px;height:200px;border-radius:50%;border:1px solid rgba(201,168,76,0.25);top:50%;left:50%;transform:translate(-50%,-50%);">
+          </div>
+          <div
+            style="position:absolute;width:140px;height:140px;border-radius:50%;border:1px solid rgba(201,168,76,0.15);top:50%;left:50%;transform:translate(-50%,-50%);">
+          </div>
+          <div
+            style="position:absolute;width:60px;height:60px;border-radius:50%;background:rgba(201,168,76,0.12);top:50%;left:50%;transform:translate(-50%,-50%);">
+          </div>
+          <div
+            style="position:absolute;width:260px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.3),transparent);top:50%;left:50%;transform:translate(-50%,-50%);">
+          </div>
+          <div
+            style="position:absolute;width:1px;height:260px;background:linear-gradient(180deg,transparent,rgba(201,168,76,0.3),transparent);top:50%;left:50%;transform:translate(-50%,-50%);">
+          </div>
+        </div>
+        <div class="exhibition-card-overlay">
+          <span class="exhibition-card-tag">Installation</span>
+          <h3 class="exhibition-card-title">Cosmos & Consciousness</h3>
+          <p class="exhibition-card-date">20 Feb – 1 May 2026</p>
+        </div>
+        <div class="exhibition-card-arrow" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M7 17L17 7M17 7H7M17 7v10" />
+          </svg>
+        </div>
+      </article>
+
+      <!-- Card 4 - CSS art -->
+      <article class="exhibition-card" id="exhibition-card-4" tabindex="0" role="article" style="overflow:hidden;">
+        <div style="
+          width:100%; height:320px;
+          background: linear-gradient(135deg, #1e0a0a 0%, #3d1010 50%, #200d0d 100%);
+          display:flex; align-items:center; justify-content:center;
+          position:relative; overflow:hidden;
+        ">
+          <div
+            style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 30px,rgba(139,26,26,0.08) 30px,rgba(139,26,26,0.08) 60px);">
+          </div>
+          <div
+            style="font-family:'Playfair Display',serif;font-size:5rem;color:rgba(201,168,76,0.12);font-weight:900;position:relative;">
+            IX</div>
+        </div>
+        <div class="exhibition-card-overlay">
+          <span class="exhibition-card-tag">Photography</span>
+          <h3 class="exhibition-card-title">Shadows & Light: A Retrospective</h3>
+          <p class="exhibition-card-date">5 Mar – 20 Jun 2026</p>
+        </div>
+        <div class="exhibition-card-arrow" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M7 17L17 7M17 7H7M17 7v10" />
+          </svg>
+        </div>
+      </article>
+
+      <!-- Card 5 - CSS art -->
+      <article class="exhibition-card" id="exhibition-card-5" tabindex="0" role="article" style="overflow:hidden;">
+        <div style="
+          width:100%; height:320px;
+          background: radial-gradient(ellipse at center, #0d2a1a 0%, #071a0d 100%);
+          display:flex; align-items:center; justify-content:center;
+          position:relative; overflow:hidden;
+        ">
+          <div
+            style="position:absolute;width:180px;height:180px;background:linear-gradient(135deg,rgba(50,140,80,0.15),transparent);transform:rotate(30deg);border:1px solid rgba(50,140,80,0.2);">
+          </div>
+          <div
+            style="position:absolute;width:120px;height:120px;background:linear-gradient(135deg,rgba(201,168,76,0.1),transparent);transform:rotate(-20deg);border:1px solid rgba(201,168,76,0.15);">
+          </div>
+        </div>
+        <div class="exhibition-card-overlay">
+          <span class="exhibition-card-tag">New Media</span>
+          <h3 class="exhibition-card-title">Nature Reborn: Digital Ecology</h3>
+          <p class="exhibition-card-date">10 Apr – 15 Jul 2026</p>
+        </div>
+        <div class="exhibition-card-arrow" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M7 17L17 7M17 7H7M17 7v10" />
+          </svg>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       ARTISTS SECTION
+       ========================================== -->
+  <section id="artists">
+    <div class="artists-header">
+      <div>
+        <div class="section-eyebrow reveal">
+          <div class="section-eyebrow-line"></div>
+          <span class="section-eyebrow-text">Featured Artists</span>
+        </div>
+        <h2 class="section-title reveal delay-1">The <em>Visionaries</em></h2>
+      </div>
+      <a href="#" class="btn-outline reveal delay-2" id="view-all-artists-btn">All Artists</a>
+    </div>
+
+    <div class="artists-grid">
+      <!-- Artist 1 -->
+      <article class="artist-card" id="artist-card-1" tabindex="0">
+        <div class="artist-card-image-wrap">
+          <img src="images/artist1.png" alt="Elena Marchetti, painter" class="artist-card-image" loading="lazy">
+          <div class="artist-card-overlay" aria-hidden="true"></div>
+          <div class="artist-card-number" aria-hidden="true">01</div>
+        </div>
+        <div class="artist-card-info">
+          <span class="artist-card-tag">Painter — Italy</span>
+          <h3 class="artist-card-name">Elena Marchetti</h3>
+          <p class="artist-card-bio">
+            A master of atmospheric oil painting, Elena's work explores the tension between
+            memory and place, drawing from the Italian countryside of her youth to create
+            hauntingly beautiful landscapes.
+          </p>
+          <a href="#" class="artist-card-link" aria-label="View Elena Marchetti's profile">
+            View Profile
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Artist 2 -->
+      <article class="artist-card" id="artist-card-2" tabindex="0">
+        <div class="artist-card-image-wrap">
+          <img src="images/artist2.png" alt="Marcus Chen, sculptor" class="artist-card-image" loading="lazy">
+          <div class="artist-card-overlay" aria-hidden="true"></div>
+          <div class="artist-card-number" aria-hidden="true">02</div>
+        </div>
+        <div class="artist-card-info">
+          <span class="artist-card-tag">Sculptor — USA</span>
+          <h3 class="artist-card-name">Marcus Chen</h3>
+          <p class="artist-card-bio">
+            Working with bronze, steel, and reclaimed materials, Marcus creates sculptures that
+            interrogate the boundary between the organic and the industrial. His monumental
+            works stand in 12 countries worldwide.
+          </p>
+          <a href="#" class="artist-card-link" aria-label="View Marcus Chen's profile">
+            View Profile
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Artist 3 — CSS portrait -->
+      <article class="artist-card" id="artist-card-3" tabindex="0">
+        <div class="artist-card-image-wrap">
+          <div style="
+            width:100%; height:440px;
+            background: linear-gradient(160deg, #0a0a14 0%, #14082a 40%, #0a1428 100%);
+            display:flex; align-items:center; justify-content:center;
+            position:relative; overflow:hidden;
+          ">
+            <!-- Abstract portrait suggestion -->
+            <div
+              style="position:absolute;width:160px;height:200px;border-radius:50% 50% 45% 45%;background:linear-gradient(160deg,rgba(201,168,76,0.18),rgba(80,60,120,0.3));top:30px;left:50%;transform:translateX(-50%);">
+            </div>
+            <div
+              style="position:absolute;width:120px;height:90px;border-radius:50%;background:rgba(201,168,76,0.12);top:50px;left:50%;transform:translateX(-50%);">
+            </div>
+            <div
+              style="position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,rgba(40,20,80,0.6),transparent);">
+            </div>
+            <!-- Stars -->
+            <div style="position:absolute;inset:0;" aria-hidden="true">
+              <div
+                style="width:2px;height:2px;background:rgba(201,168,76,0.6);border-radius:50%;position:absolute;top:15%;left:20%;">
+              </div>
+              <div
+                style="width:1px;height:1px;background:rgba(255,255,255,0.4);border-radius:50%;position:absolute;top:25%;left:70%;">
+              </div>
+              <div
+                style="width:2px;height:2px;background:rgba(255,255,255,0.3);border-radius:50%;position:absolute;top:40%;right:15%;">
+              </div>
+              <div
+                style="width:1px;height:1px;background:rgba(201,168,76,0.5);border-radius:50%;position:absolute;top:10%;right:30%;">
+              </div>
+            </div>
+          </div>
+          <div class="artist-card-overlay" aria-hidden="true"></div>
+          <div class="artist-card-number" aria-hidden="true">03</div>
+        </div>
+        <div class="artist-card-info">
+          <span class="artist-card-tag">Digital Artist — Japan</span>
+          <h3 class="artist-card-name">Yuki Tanaka</h3>
+          <p class="artist-card-bio">
+            A pioneer of immersive digital art, Yuki's installations dissolve the boundary
+            between viewer and artwork. Using AI and generative algorithms, she creates
+            ever-evolving visual worlds.
+          </p>
+          <a href="#" class="artist-card-link" aria-label="View Yuki Tanaka's profile">
+            View Profile
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       EVENTS SECTION
+       ========================================== -->
+  <section id="events">
+    <div class="events-bg-text" aria-hidden="true">EVENTS</div>
+
+    <div class="events-container">
+      <div class="events-header">
+        <div class="section-eyebrow reveal">
+          <div class="section-eyebrow-line"></div>
+          <span class="section-eyebrow-text">Calendar</span>
+        </div>
+        <h2 class="section-title reveal delay-1">Upcoming <em>Events</em></h2>
+        <p class="reveal delay-2"
+          style="margin-top:16px;color:var(--gray);max-width:500px;margin-left:auto;margin-right:auto;font-size:0.9rem;">
+          From intimate curator talks to grand opening galas, there's always something extraordinary happening at MUSE.
+        </p>
+      </div>
+
+      <!-- Events List -->
+      <div role="list" aria-label="Upcoming events">
+
+        <div class="event-item reveal" role="listitem" tabindex="0" id="event-1">
+          <div class="event-date">
+            <div class="event-date-day">14</div>
+            <div class="event-date-month">Jul</div>
+          </div>
+          <div class="event-details">
+            <div class="event-type">Opening Night</div>
+            <h3 class="event-title">Geometric Visions: Grand Opening Gala</h3>
+            <p class="event-meta">7:00 PM — Grand Hall, MUSE · Black Tie</p>
+          </div>
+          <a href="#visit" class="event-ticket" aria-label="Get tickets for Geometric Visions Gala">Tickets</a>
+        </div>
+
+        <div class="event-item reveal delay-1" role="listitem" tabindex="0" id="event-2">
+          <div class="event-date">
+            <div class="event-date-day">22</div>
+            <div class="event-date-month">Jul</div>
+          </div>
+          <div class="event-details">
+            <div class="event-type">Curator Talk</div>
+            <h3 class="event-title">In Conversation: Elena Marchetti</h3>
+            <p class="event-meta">3:00 PM — Lecture Hall B · Tickets Required</p>
+          </div>
+          <a href="#visit" class="event-ticket" aria-label="Get tickets for Elena Marchetti talk">Tickets</a>
+        </div>
+
+        <div class="event-item reveal delay-2" role="listitem" tabindex="0" id="event-3">
+          <div class="event-date">
+            <div class="event-date-day">05</div>
+            <div class="event-date-month">Aug</div>
+          </div>
+          <div class="event-details">
+            <div class="event-type">Workshop</div>
+            <h3 class="event-title">Abstraction in Practice: Painting Workshop</h3>
+            <p class="event-meta">10:00 AM – 2:00 PM · Studio 3 · Limited Places</p>
+          </div>
+          <a href="#visit" class="event-ticket" aria-label="Get tickets for painting workshop">Tickets</a>
+        </div>
+
+        <div class="event-item reveal delay-3" role="listitem" tabindex="0" id="event-4">
+          <div class="event-date">
+            <div class="event-date-day">18</div>
+            <div class="event-date-month">Aug</div>
+          </div>
+          <div class="event-details">
+            <div class="event-type">Family Day</div>
+            <h3 class="event-title">Art for Everyone: Family Open Day</h3>
+            <p class="event-meta">All Day · Main Galleries · Free Entry for Under 18s</p>
+          </div>
+          <a href="#visit" class="event-ticket" aria-label="Get tickets for Family Open Day">Free</a>
+        </div>
+
+        <div class="event-item reveal delay-4" role="listitem" tabindex="0" id="event-5">
+          <div class="event-date">
+            <div class="event-date-day">30</div>
+            <div class="event-date-month">Aug</div>
+          </div>
+          <div class="event-details">
+            <div class="event-type">Special Event</div>
+            <h3 class="event-title">Night at the Museum: After Dark Experience</h3>
+            <p class="event-meta">9:00 PM – 1:00 AM · All Galleries · 18+ Only</p>
+          </div>
+          <a href="#visit" class="event-ticket" aria-label="Get tickets for Night at the Museum">Tickets</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       GALLERY SECTION
+       ========================================== -->
+  <section id="gallery">
+    <div class="gallery-header">
+      <div>
+        <div class="section-eyebrow reveal">
+          <div class="section-eyebrow-line"></div>
+          <span class="section-eyebrow-text">Collection</span>
+        </div>
+        <h2 class="section-title reveal delay-1">The <em>Gallery</em></h2>
+      </div>
+      <div class="gallery-filter reveal delay-2" role="group" aria-label="Gallery filter">
+        <button class="gallery-filter-btn active" data-filter="all" id="filter-all">All</button>
+        <button class="gallery-filter-btn" data-filter="painting" id="filter-painting">Paintings</button>
+        <button class="gallery-filter-btn" data-filter="sculpture" id="filter-sculpture">Sculpture</button>
+        <button class="gallery-filter-btn" data-filter="photo" id="filter-photo">Photography</button>
+      </div>
+    </div>
+
+    <div class="gallery-masonry" role="list" aria-label="Art gallery">
+
+      <!-- Item 1 -->
+      <div class="gallery-item" data-category="painting" role="listitem" tabindex="0" id="gallery-item-1"
+        aria-label="Abstract geometric artwork">
+        <img src="images/artwork1.png" alt="Geometric Visions — Abstract painting with gold and black" loading="lazy">
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Item 2: CSS art tall -->
+      <div class="gallery-item" data-category="sculpture" role="listitem" tabindex="0" id="gallery-item-2"
+        aria-label="Blue circle sculpture art">
+        <div style="
+          width:100%;height:340px;display:block;
+          background:linear-gradient(160deg,#050510 0%,#0a0a28 50%,#080814 100%);
+          position:relative;overflow:hidden;
+        ">
+          <div
+            style="position:absolute;width:140px;height:140px;border-radius:50%;border:2px solid rgba(201,168,76,0.4);top:50%;left:50%;transform:translate(-50%,-50%);">
+          </div>
+          <div
+            style="position:absolute;width:90px;height:90px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.2),transparent);top:50%;left:50%;transform:translate(-50%,-50%);">
+          </div>
+          <div
+            style="position:absolute;width:200px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.3),transparent);top:50%;left:50%;transform:translate(-50%,-50%);">
+          </div>
+          <div
+            style="position:absolute;width:1px;height:200px;background:linear-gradient(180deg,transparent,rgba(201,168,76,0.3),transparent);top:50%;left:50%;transform:translate(-50%,-50%);">
+          </div>
+          <div
+            style="position:absolute;bottom:20px;right:20px;font-family:'Playfair Display',serif;font-size:0.6rem;letter-spacing:0.2em;color:rgba(201,168,76,0.4);text-transform:uppercase;">
+            Cosmos I</div>
+        </div>
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="gallery-item" data-category="painting" role="listitem" tabindex="0" id="gallery-item-3"
+        aria-label="Impressionist painting of woman">
+        <img src="images/artwork2.png" alt="Impressionist painting — woman by window" loading="lazy">
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Item 4: CSS art short -->
+      <div class="gallery-item" data-category="photo" role="listitem" tabindex="0" id="gallery-item-4"
+        aria-label="Abstract red wave photography">
+        <div style="
+          width:100%;height:200px;display:block;
+          background:linear-gradient(135deg,#1a0505 0%,#2d0808 40%,#1a0505 100%);
+          position:relative;overflow:hidden;
+        ">
+          <div
+            style="position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(139,26,26,0.05) 20px,rgba(139,26,26,0.05) 40px);">
+          </div>
+          <div
+            style="position:absolute;width:60px;height:60px;border-radius:50%;background:radial-gradient(rgba(139,26,26,0.5),transparent);top:50%;left:50%;transform:translate(-50%,-50%);">
+          </div>
+          <div
+            style="position:absolute;bottom:16px;left:16px;font-family:'Playfair Display',serif;font-size:0.55rem;letter-spacing:0.2em;color:rgba(201,168,76,0.5);text-transform:uppercase;">
+            Crimson Study</div>
+        </div>
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Item 5: Artist portrait in gallery -->
+      <div class="gallery-item" data-category="photo" role="listitem" tabindex="0" id="gallery-item-5"
+        aria-label="Artist portrait in studio">
+        <img src="images/artist1.png" alt="Artist Elena Marchetti in her studio" loading="lazy">
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Item 6: CSS art medium -->
+      <div class="gallery-item" data-category="sculpture" role="listitem" tabindex="0" id="gallery-item-6"
+        aria-label="Green geometric sculpture">
+        <div style="
+          width:100%;height:280px;display:block;
+          background:linear-gradient(160deg,#051408 0%,#0a2814 50%,#051408 100%);
+          position:relative;overflow:hidden;
+        ">
+          <div
+            style="position:absolute;width:100px;height:100px;border:1px solid rgba(50,180,80,0.25);transform:rotate(45deg);top:50%;left:50%;margin-top:-50px;margin-left:-50px;">
+          </div>
+          <div
+            style="position:absolute;width:60px;height:60px;border:1px solid rgba(201,168,76,0.2);transform:rotate(30deg);top:50%;left:50%;margin-top:-30px;margin-left:-30px;">
+          </div>
+          <div
+            style="position:absolute;bottom:16px;right:16px;font-family:'Playfair Display',serif;font-size:0.55rem;letter-spacing:0.2em;color:rgba(50,180,80,0.5);text-transform:uppercase;">
+            Equilibrium</div>
+        </div>
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Item 7: Exhibition hall -->
+      <div class="gallery-item" data-category="photo" role="listitem" tabindex="0" id="gallery-item-7"
+        aria-label="Exhibition gallery hall">
+        <img src="images/exhibition.png" alt="MUSE exhibition gallery hall" loading="lazy">
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Item 8: CSS art -->
+      <div class="gallery-item" data-category="painting" role="listitem" tabindex="0" id="gallery-item-8"
+        aria-label="Abstract blue wave painting">
+        <div style="
+          width:100%;height:240px;display:block;
+          background:linear-gradient(135deg,#050814 0%,#0a1428 50%,#050814 100%);
+          position:relative;overflow:hidden;
+        ">
+          <div
+            style="position:absolute;width:250px;height:250px;border-radius:50%;border:1px solid rgba(30,60,180,0.2);bottom:-80px;left:-60px;">
+          </div>
+          <div
+            style="position:absolute;width:150px;height:150px;border-radius:50%;background:radial-gradient(rgba(30,80,200,0.12),transparent);bottom:-20px;left:20px;">
+          </div>
+          <div
+            style="position:absolute;width:180px;height:1px;background:linear-gradient(90deg,transparent,rgba(100,140,255,0.3),transparent);top:40%;right:20px;">
+          </div>
+          <div
+            style="position:absolute;top:20px;right:16px;font-family:'Playfair Display',serif;font-size:0.55rem;letter-spacing:0.2em;color:rgba(100,140,255,0.5);text-transform:uppercase;">
+            Deep Blue</div>
+        </div>
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       VISIT / TICKETS SECTION
+       ========================================== -->
+  <section id="visit">
+    <div class="visit-bg" aria-hidden="true"></div>
+    <div class="visit-content">
+      <div class="section-eyebrow reveal">
+        <div class="section-eyebrow-line"></div>
+        <span class="section-eyebrow-text">Plan Your Visit</span>
+      </div>
+
+      <h2 class="visit-title reveal delay-1">
+        Tickets &<br>
+        <em>Admission</em>
+      </h2>
+
+      <p class="visit-description reveal delay-2">
+        Experience the world's most celebrated collection. Choose the admission that's right for you.
+      </p>
+
+      <div class="tickets-grid reveal delay-3">
+
+        <div class="ticket-card" id="ticket-basic">
+          <div class="ticket-type">General</div>
+          <div class="ticket-price"><sup>$</sup>18</div>
+          <div class="ticket-period">Per Adult</div>
+          <ul class="ticket-features">
+            <li class="ticket-feature"><span class="ticket-feature-dot"></span>All Permanent Galleries</li>
+            <li class="ticket-feature"><span class="ticket-feature-dot"></span>Self-Guided Tour</li>
+            <li class="ticket-feature"><span class="ticket-feature-dot"></span>Audio Guide App</li>
+          </ul>
+          <a href="#" class="ticket-btn" id="btn-general-ticket">Book Now</a>
+        </div>
+
+        <div class="ticket-card featured" id="ticket-premium">
+          <div class="ticket-type">Premium</div>
+          <div class="ticket-price"><sup>$</sup>35</div>
+          <div class="ticket-period">Per Adult</div>
+          <ul class="ticket-features">
+            <li class="ticket-feature"><span class="ticket-feature-dot"></span>All Galleries + Exhibitions</li>
+            <li class="ticket-feature"><span class="ticket-feature-dot"></span>Guided Tour Included</li>
+            <li class="ticket-feature"><span class="ticket-feature-dot"></span>Exclusive Lounge Access</li>
+            <li class="ticket-feature"><span class="ticket-feature-dot"></span>Museum Catalogue</li>
+          </ul>
+          <a href="#" class="ticket-btn" id="btn-premium-ticket">Book Now</a>
+        </div>
+
+        <div class="ticket-card" id="ticket-member">
+          <div class="ticket-type">Annual</div>
+          <div class="ticket-price"><sup>$</sup>120</div>
+          <div class="ticket-period">Per Year</div>
+          <ul class="ticket-features">
+            <li class="ticket-feature"><span class="ticket-feature-dot"></span>Unlimited Visits</li>
+            <li class="ticket-feature"><span class="ticket-feature-dot"></span>Members-Only Events</li>
+            <li class="ticket-feature"><span class="ticket-feature-dot"></span>10% Shop Discount</li>
+            <li class="ticket-feature"><span class="ticket-feature-dot"></span>Guest Passes (x2)</li>
+          </ul>
+          <a href="#" class="ticket-btn" id="btn-annual-ticket">Become a Member</a>
+        </div>
+
+      </div>
+
+      <!-- Hours -->
+      <div class="visit-hours reveal delay-4" aria-label="Museum opening hours">
+        <div class="visit-hour-item">
+          <div class="visit-hour-day">Mon – Thu</div>
+          <div class="visit-hour-time">10:00 – 18:00</div>
+        </div>
+        <div class="visit-hour-item">
+          <div class="visit-hour-day">Fri – Sat</div>
+          <div class="visit-hour-time">10:00 – 21:00</div>
+        </div>
+        <div class="visit-hour-item">
+          <div class="visit-hour-day">Sunday</div>
+          <div class="visit-hour-time">11:00 – 17:00</div>
+        </div>
+        <div class="visit-hour-item">
+          <div class="visit-hour-day">Address</div>
+          <div class="visit-hour-time">1011 Fifth Ave, NYC</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       NEWSLETTER SECTION
+       ========================================== -->
+  <section id="newsletter">
+    <div class="newsletter-inner">
+      <div class="section-eyebrow reveal" style="justify-content:center;">
+        <div class="section-eyebrow-line"></div>
+        <span class="section-eyebrow-text">Stay Connected</span>
+      </div>
+      <h2 class="newsletter-title reveal delay-1">Subscribe to Our <em
+          style="font-style:italic;color:var(--gold)">Newsletter</em></h2>
+      <p class="newsletter-subtitle reveal delay-2">
+        Be the first to know about new exhibitions, exclusive events, artist talks, and special member offers.
+      </p>
+      <form class="newsletter-form reveal delay-3" id="newsletter-form" novalidate>
+        <label for="newsletter-email" class="sr-only"
+          style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Email address</label>
+        <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Your email address" required
+          aria-label="Email address for newsletter">
+        <button type="submit" class="newsletter-btn" id="newsletter-submit-btn">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer role="contentinfo">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div>
+        <div class="footer-brand-name">STA<span>C</span>KLY</div>
+        <p class="footer-tagline">Where Art Meets Eternity</p>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="#" class="footer-social-link" aria-label="Stackly on Instagram">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="Stackly on Facebook">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+            </svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="Stackly on Twitter">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+            </svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="Stackly on YouTube">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Explore -->
+      <div>
+        <h3 class="footer-col-title">Explore</h3>
+        <ul class="footer-links">
+          <li><a href="exhibitions.html" class="footer-link">Exhibitions</a></li>
+          <li><a href="exhibitions.html#artists" class="footer-link">Artists</a></li>
+          <li><a href="gallery.html" class="footer-link">Collection</a></li>
+          <li><a href="#events" class="footer-link">Events & Programs</a></li>
+          <li><a href="about.html" class="footer-link">About MUSE</a></li>
+          <li><a href="gallery.html" class="footer-link">Virtual Tours</a></li>
+        </ul>
+      </div>
+
+      <!-- Visit -->
+      <div>
+        <h3 class="footer-col-title">Visit</h3>
+        <ul class="footer-links">
+          <li><a href="#visit" class="footer-link">Tickets & Admission</a></li>
+          <li><a href="index.html#signin" class="footer-link">Member Sign In</a></li>
+          <li><a href="#" class="footer-link">Museum Shop</a></li>
+          <li><a href="#" class="footer-link">Restaurant & Café</a></li>
+          <li><a href="#" class="footer-link">Accessibility</a></li>
+          <li><a href="#" class="footer-link">Group Visits</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="footer-col-title">Contact</h3>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📍</span>
+          <span class="footer-contact-text">MMM Complex, Chinnathirupati<br>Salem, tn 636008</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📞</span>
+          <span class="footer-contact-text">+91 (987) 654-3210</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">✉</span>
+          <span class="footer-contact-text">info@stacklymuseum.org</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2026 Stackly Museum of Modern & Contemporary Art. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-bottom-link">Privacy Policy</a>
+        <a href="#" class="footer-bottom-link">Terms of Use</a>
+        <a href="#" class="footer-bottom-link">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       SIGN IN MODAL
+       ========================================== -->
+  <div id="signin-modal" class="signin-modal-overlay" role="dialog" aria-modal="true" aria-label="Sign In">
+    <div class="signin-modal-card">
+      <!-- Close button -->
+      <button class="signin-modal-close" id="signin-modal-close" aria-label="Close sign in">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      <!-- Logo -->
+      <a href="index.html" class="signin-modal-logo">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+        </svg>
+        STA<span>C</span>KLY
+      </a>
+
+      <!-- Heading -->
+      <h2 class="signin-modal-title">Welcome Back</h2>
+      <p class="signin-modal-subtitle">Login to access your Stackly Museum account</p>
+
+      <!-- Form -->
+      <form class="signin-modal-form" id="signin-modal-form">
+
+        <!-- Login As -->
+        <div class="smf-group">
+          <label class="smf-label" for="modal-role">Login As</label>
+          <div class="smf-input-wrap">
+            <select id="modal-role" class="smf-input smf-select">
+              <option>Admin</option>
+              <option>Visitor</option>
+
+            </select>
+            <svg class="smf-chevron" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7 10l5 5 5-5H7z" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="smf-group">
+          <label class="smf-label" for="modal-email">Email Address</label>
+          <div class="smf-input-wrap">
+            <svg class="smf-icon-left" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+            <input type="email" id="modal-email" class="smf-input smf-with-icon" placeholder="you@example.com" required>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="smf-group">
+          <label class="smf-label" for="modal-password">Password</label>
+          <div class="smf-input-wrap">
+            <svg class="smf-icon-left" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+            </svg>
+            <input type="password" id="modal-password" class="smf-input smf-with-icon smf-with-both"
+              placeholder="••••••••" required>
+            <button type="button" class="smf-eye-btn" aria-label="Toggle password"
+              onclick="const p=document.getElementById('modal-password');p.type=p.type==='password'?'text':'password';">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Options row -->
+        <div class="smf-options">
+          <label class="smf-remember">
+            <input type="checkbox" id="modal-remember">
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="smf-forgot">Forgot password?</a>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="smf-btn">Login to Dashboard</button>
+      </form>
+
+      <p class="smf-footer">Don't have an account? <a href="signup.html">Sign up</a></p>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SCRIPTS
+       ========================================== -->
+  <script src="js/main.js"></script>
+  <script>
+    // ---- Sign In Modal Logic ----
+    const signinModal = document.getElementById('signin-modal');
+    const signinTrigger = document.getElementById('signin-trigger');
+    const mobileTrigger = document.getElementById('mobile-signin-trigger');
+    const signinClose = document.getElementById('signin-modal-close');
+    const signinForm = document.getElementById('signin-modal-form');
+
+    function openSigninModal(e) {
+      e && e.preventDefault();
+      signinModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeSigninModal() {
+      signinModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    signinTrigger && signinTrigger.addEventListener('click', openSigninModal);
+    mobileTrigger && mobileTrigger.addEventListener('click', openSigninModal);
+    signinClose && signinClose.addEventListener('click', closeSigninModal);
+
+    signinModal && signinModal.addEventListener('click', (e) => {
+      if (e.target === signinModal) closeSigninModal();
+    });
+
+    signinForm && signinForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const role = document.getElementById('modal-role').value;
+      closeSigninModal();
+      if (role === 'Admin') {
+        window.location.href = 'admin-dashboard.html';
+      } else {
+        window.location.href = 'visitor-dashboard.html';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeSigninModal();
+    });
+
+    if (window.location.hash === '#signin') {
+      openSigninModal();
+      // Optionally remove the hash without scrolling
+      history.replaceState(null, null, ' ');
+    }
+  </script>
+</body>
+
+</html>
