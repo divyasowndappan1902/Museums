@@ -15,20 +15,18 @@
 <body class="dashboard-body">
 
   <div class="dashboard-layout">
+    <div class="sidebar-overlay"></div>
 
     <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="sidebar-header">
         <a href="index.html" class="sidebar-logo">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-          </svg>
-          STA<span>C</span>KLY
+          <img src="images/logo.png" alt="STACKLY">
         </a>
       </div>
 
       <nav class="sidebar-nav">
-        <a href="#" class="nav-item active">
+        <a href="404.html" class="nav-item active">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
@@ -36,7 +34,7 @@
           </svg>
           Overview
         </a>
-        <a href="#" class="nav-item">
+        <a href="404.html" class="nav-item">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
@@ -44,7 +42,7 @@
           </svg>
           Exhibitions
         </a>
-        <a href="#" class="nav-item">
+        <a href="404.html" class="nav-item">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
@@ -52,7 +50,7 @@
           </svg>
           Collection
         </a>
-        <a href="#" class="nav-item">
+        <a href="404.html" class="nav-item">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
@@ -60,7 +58,7 @@
           </svg>
           Members
         </a>
-        <a href="#" class="nav-item">
+        <a href="404.html" class="nav-item">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
@@ -111,7 +109,7 @@
               </path>
             </svg>
           </button>
-          <button class="btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">+ New Exhibition</button>
+          <button class="btn-primary" onclick="window.location.href='404.html'" style="padding: 10px 20px; font-size: 0.8rem;">+ New Exhibition</button>
         </div>
       </header>
 
@@ -178,7 +176,7 @@
         <section class="data-section">
           <div class="data-section-header">
             <h2 class="data-section-title">Current Exhibitions Status</h2>
-            <a href="#" style="color:var(--gold); font-size:0.85rem; text-decoration:none;">View All</a>
+            <a href="404.html" style="color:var(--gold); font-size:0.85rem; text-decoration:none;">View All</a>
           </div>
           <table class="dashboard-table">
             <thead>
@@ -244,22 +242,21 @@
         </section>
 
       </div>
-</div>
 
 <div class="dashboard-tab-pane" style="display:none;">
 
       <div class="data-section" style="margin-bottom: 2rem;">
         <div class="data-section-header">
           <h2 class="data-section-title">Active Exhibitions</h2>
-          <button class="btn-primary" style="padding: 6px 12px; font-size: 0.8rem;">+ Add New</button>
+          <button class="btn-primary" onclick="window.location.href='404.html'" style="padding: 6px 12px; font-size: 0.8rem;">+ Add New</button>
         </div>
         <table class="dashboard-table">
           <thead>
             <tr><th>Exhibition Name</th><th>Curator</th><th>Status</th><th>Actions</th></tr>
           </thead>
           <tbody>
-            <tr><td>Geometric Visions</td><td>Sarah Jenkins</td><td><span class="status-badge status-active">Active</span></td><td><a href="#" style="color:var(--gold);">Edit</a></td></tr>
-            <tr><td>Impressionist Dreams</td><td>Michael Chen</td><td><span class="status-badge status-active">Active</span></td><td><a href="#" style="color:var(--gold);">Edit</a></td></tr>
+            <tr><td>Geometric Visions</td><td>Sarah Jenkins</td><td><span class="status-badge status-active">Active</span></td><td><a href="404.html" style="color:var(--gold);">Edit</a></td></tr>
+            <tr><td>Impressionist Dreams</td><td>Michael Chen</td><td><span class="status-badge status-active">Active</span></td><td><a href="404.html" style="color:var(--gold);">Edit</a></td></tr>
           </tbody>
         </table>
       </div>
@@ -273,8 +270,8 @@
             <tr><th>Exhibition Name</th><th>Date</th><th>Status</th><th>Actions</th></tr>
           </thead>
           <tbody>
-            <tr><td>Digital Horizons</td><td>Oct 2026</td><td><span class="status-badge status-pending" style="background: rgba(255, 152, 0, 0.1); color: #FF9800; border-color: rgba(255, 152, 0, 0.2);">Upcoming</span></td><td><a href="#" style="color:var(--gold);">Edit</a></td></tr>
-            <tr><td>Renaissance Revival</td><td>Feb 2025</td><td><span class="status-badge" style="background: rgba(158, 158, 158, 0.1); color: #9E9E9E; border-color: rgba(158, 158, 158, 0.2);">Archived</span></td><td><a href="#" style="color:var(--gold);">View</a></td></tr>
+            <tr><td>Digital Horizons</td><td>Oct 2026</td><td><span class="status-badge status-pending" style="background: rgba(255, 152, 0, 0.1); color: #FF9800; border-color: rgba(255, 152, 0, 0.2);">Upcoming</span></td><td><a href="404.html" style="color:var(--gold);">Edit</a></td></tr>
+            <tr><td>Renaissance Revival</td><td>Feb 2025</td><td><span class="status-badge" style="background: rgba(158, 158, 158, 0.1); color: #9E9E9E; border-color: rgba(158, 158, 158, 0.2);">Archived</span></td><td><a href="404.html" style="color:var(--gold);">View</a></td></tr>
           </tbody>
         </table>
       </div>
@@ -286,7 +283,7 @@
       <div class="data-section" style="margin-bottom: 2rem;">
         <div class="data-section-header">
           <h2 class="data-section-title">Featured Artworks</h2>
-          <button class="btn-primary" style="padding: 6px 12px; font-size: 0.8rem;">+ Add Artwork</button>
+          <button class="btn-primary" onclick="window.location.href='404.html'" style="padding: 6px 12px; font-size: 0.8rem;">+ Add Artwork</button>
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-top: 1rem;">
           <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px;">
@@ -331,7 +328,6 @@
           </tbody>
         </table>
       </div>
-      </div>
     
 </div>
 
@@ -341,7 +337,7 @@
         <div class="data-section-header">
           <h2 class="data-section-title">Membership Insights</h2>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin-top: 1rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; padding: 20px;">
           <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; text-align: center;">
             <h3 style="font-size: 2rem; color: var(--gold); margin-bottom: 4px;">1,248</h3>
             <p style="font-size: 0.85rem; color: #888;">Total Active Members</p>
@@ -350,13 +346,21 @@
             <h3 style="font-size: 2rem; color: var(--gold); margin-bottom: 4px;">+12%</h3>
             <p style="font-size: 0.85rem; color: #888;">Growth This Month</p>
           </div>
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; text-align: center;">
+            <h3 style="font-size: 2rem; color: var(--gold); margin-bottom: 4px;">45</h3>
+            <p style="font-size: 0.85rem; color: #888;">Pending Renewals</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; text-align: center;">
+            <h3 style="font-size: 2rem; color: var(--gold); margin-bottom: 4px;">$24k</h3>
+            <p style="font-size: 0.85rem; color: #888;">Monthly Revenue</p>
+          </div>
         </div>
       </div>
 
       <div class="data-section" style="margin-bottom: 2rem;">
         <div class="data-section-header">
           <h2 class="data-section-title">Premium Members</h2>
-          <button class="btn-primary" style="padding: 6px 12px; font-size: 0.8rem;">Export List</button>
+          <button class="btn-primary" onclick="window.location.href='404.html'" style="padding: 6px 12px; font-size: 0.8rem;">Export List</button>
         </div>
         <table class="dashboard-table">
           <thead>
@@ -365,11 +369,14 @@
           <tbody>
             <tr><td>Jane Doe</td><td>jane@example.com</td><td>Jan 12, 2026</td><td><span class="status-badge status-active">Active</span></td></tr>
             <tr><td>Alice Johnson</td><td>alice@example.com</td><td>Mar 20, 2026</td><td><span class="status-badge status-active">Active</span></td></tr>
+            <tr><td>Michael Chang</td><td>michael.c@example.com</td><td>Apr 02, 2026</td><td><span class="status-badge status-active">Active</span></td></tr>
+            <tr><td>Sarah Williams</td><td>swilliams@example.com</td><td>May 15, 2026</td><td><span class="status-badge status-pending">Renewing</span></td></tr>
+            <tr><td>David Miller</td><td>davidm@example.com</td><td>May 28, 2026</td><td><span class="status-badge status-active">Active</span></td></tr>
           </tbody>
         </table>
       </div>
 
-      <div class="data-section">
+      <div class="data-section" style="margin-bottom: 2rem;">
         <div class="data-section-header">
           <h2 class="data-section-title">Basic Members</h2>
         </div>
@@ -378,8 +385,28 @@
             <tr><th>Name</th><th>Email</th><th>Join Date</th><th>Actions</th></tr>
           </thead>
           <tbody>
-            <tr><td>John Smith</td><td>john@example.com</td><td>Feb 05, 2026</td><td><a href="#" style="color:var(--gold);">Upgrade</a></td></tr>
-            <tr><td>Robert Paulson</td><td>robert@example.com</td><td>Apr 14, 2026</td><td><a href="#" style="color:var(--gold);">Upgrade</a></td></tr>
+            <tr><td>John Smith</td><td>john@example.com</td><td>Feb 05, 2026</td><td><a href="404.html" style="color:var(--gold);">Upgrade</a></td></tr>
+            <tr><td>Robert Paulson</td><td>robert@example.com</td><td>Apr 14, 2026</td><td><a href="404.html" style="color:var(--gold);">Upgrade</a></td></tr>
+            <tr><td>Emily Davis</td><td>emily.d@example.com</td><td>Jun 01, 2026</td><td><a href="404.html" style="color:var(--gold);">Upgrade</a></td></tr>
+            <tr><td>James Wilson</td><td>jwilson@example.com</td><td>Jun 10, 2026</td><td><a href="404.html" style="color:var(--gold);">Upgrade</a></td></tr>
+            <tr><td>Olivia Taylor</td><td>olivia.t@example.com</td><td>Jun 12, 2026</td><td><a href="404.html" style="color:var(--gold);">Upgrade</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="data-section">
+        <div class="data-section-header">
+          <h2 class="data-section-title">Recent Activities</h2>
+        </div>
+        <table class="dashboard-table">
+          <thead>
+            <tr><th>Member</th><th>Activity</th><th>Date</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Sarah Williams</td><td>Renewed Premium Membership</td><td>Today, 10:30 AM</td></tr>
+            <tr><td>John Smith</td><td>Attended "Geometric Visions"</td><td>Yesterday, 2:15 PM</td></tr>
+            <tr><td>Alice Johnson</td><td>Purchased Gift Shop Item</td><td>Jun 15, 2026</td></tr>
+            <tr><td>Michael Chang</td><td>Booked VIP Tour</td><td>Jun 14, 2026</td></tr>
           </tbody>
         </table>
       </div>
@@ -401,7 +428,7 @@
             <label style="display: block; margin-bottom: 8px; font-size: 0.85rem; color: #aaa;">Contact Email</label>
             <input type="email" value="contact@musemuseum.com" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 4px;">
           </div>
-          <button type="button" class="btn-primary" style="padding: 10px; width: fit-content;">Save Changes</button>
+          <button type="button" class="btn-primary" onclick="window.location.href='404.html'" style="padding: 10px; width: fit-content;">Save Changes</button>
         </form>
       </div>
 
@@ -410,7 +437,7 @@
           <h2 class="data-section-title">Operating Hours</h2>
         </div>
         <form style="display: flex; flex-direction: column; gap: 16px; max-width: 500px; margin-top: 1rem;">
-          <div style="display: flex; gap: 16px;">
+          <div class="responsive-flex-row">
             <div style="flex: 1;">
               <label style="display: block; margin-bottom: 8px; font-size: 0.85rem; color: #aaa;">Opening Time</label>
               <input type="time" value="10:00" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 4px;">
@@ -420,7 +447,7 @@
               <input type="time" value="18:00" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 4px;">
             </div>
           </div>
-          <button type="button" class="btn-primary" style="padding: 10px; width: fit-content;">Update Hours</button>
+          <button type="button" class="btn-primary" onclick="window.location.href='404.html'" style="padding: 10px; width: fit-content;">Update Hours</button>
         </form>
       </div>
     
@@ -456,7 +483,7 @@
           p.style.display = i === index ? 'block' : 'none';
         });
         
-        const sidebar = document.querySelector('.dashboard-sidebar');
+        const sidebar = document.querySelector('.sidebar');
         if (sidebar && window.innerWidth <= 768) {
           sidebar.classList.remove('open');
         }
@@ -464,11 +491,33 @@
     });
 
     const mobileToggle = document.querySelector('.mobile-sidebar-toggle');
-    const sidebar = document.querySelector('.dashboard-sidebar');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.sidebar-overlay');
     if (mobileToggle && sidebar) {
-      mobileToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        if (overlay) overlay.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      function openSidebar() {
+        sidebar.classList.add('open');
+        if (overlay) overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+
+      mobileToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (sidebar.classList.contains('open')) {
+          closeSidebar();
+        } else {
+          openSidebar();
+        }
       });
+
+      if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+      }
     }
   });
 </script>

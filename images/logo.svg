@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 255 60" width="100%" height="100%">
+  <!-- Symbol -->
+  <g transform="translate(6, 6) scale(0.8)">
+    <!-- Top-left swoosh (Mint Green / Teal) -->
+    <path d="M14,5 C14,5 4,15 4,28 C4,38 12,44 20,44 C26,44 34,38 34,30 C34,22 24,14 14,5 Z" fill="#79d2b4" />
+    <!-- Bottom-right swoosh (Steel Blue) -->
+    <path d="M46,55 C46,55 56,45 56,32 C56,22 48,16 40,16 C34,16 26,22 26,30 C26,38 36,46 46,55 Z" fill="#2a5c84" />
+  </g>
+  <!-- Text STACKLY (Steel Blue) -->
+  <g stroke="#2a5c84" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter" fill="none">
+    <!-- S -->
+    <path d="M 88,12.5 L 70,12.5 L 70,30 L 88,30 L 88,47.5 L 70,47.5" />
+    <!-- T -->
+    <path d="M 96,12.5 L 114,12.5 M 105,12.5 L 105,47.5" />
+    <!-- A -->
+    <path d="M 122,47.5 L 131,12.5 L 140,47.5 M 126.5,32 L 135.5,32" />
+    <!-- C -->
+    <path d="M 166,12.5 L 148,12.5 L 148,47.5 L 166,47.5" />
+    <!-- K -->
+    <path d="M 174,12.5 L 174,47.5 M 192,12.5 L 174,30 L 192,47.5" />
+    <!-- L -->
+    <path d="M 200,12.5 L 200,47.5 L 218,47.5" />
+    <!-- Y -->
+    <path d="M 226,12.5 L 235,30 L 244,12.5 M 235,30 L 235,47.5" />
+  </g>
+</svg>

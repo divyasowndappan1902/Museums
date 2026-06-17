@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | STACKLY Museum</title>
+  <meta name="description" content="The page you're looking for doesn't exist or is not yet available.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛</text></svg>">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background: #0a0a0a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      color: #e0e0e0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Ambient glow orbs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.12;
+      pointer-events: none;
+      animation: drift 12s ease-in-out infinite alternate;
+    }
+    .orb-1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, #d4af37, transparent 70%);
+      top: -200px; left: -150px;
+      animation-delay: 0s;
+    }
+    .orb-2 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, #8b6914, transparent 70%);
+      bottom: -150px; right: -100px;
+      animation-delay: -6s;
+    }
+    @keyframes drift {
+      0%   { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(30px, 20px) scale(1.08); }
+    }
+
+    /* Noise texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Thin top accent line */
+    .accent-line {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #d4af37 30%, #d4af37 70%, transparent);
+      opacity: 0.6;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 40px 24px;
+      max-width: 600px;
+    }
+
+    /* Giant 404 */
+    .error-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(120px, 22vw, 220px);
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, #d4af37 0%, #f5e27a 40%, #b8962e 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s ease-in-out infinite alternate;
+      user-select: none;
+    }
+
+    @keyframes shimmer {
+      0%   { filter: brightness(1); }
+      100% { filter: brightness(1.2); }
+    }
+
+    /* Decorative divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 8px auto 32px;
+      width: fit-content;
+    }
+    .divider-line {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5));
+    }
+    .divider-line.right {
+      background: linear-gradient(90deg, rgba(212,175,55,0.5), transparent);
+    }
+    .divider-icon {
+      color: #d4af37;
+      font-size: 1.1rem;
+      opacity: 0.7;
+    }
+
+    .error-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 400;
+      color: #f0f0f0;
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    .error-subtitle {
+      font-size: 0.95rem;
+      color: #888;
+      line-height: 1.7;
+      margin-bottom: 48px;
+      font-weight: 300;
+    }
+
+    .error-subtitle em {
+      color: rgba(212,175,55,0.8);
+      font-style: normal;
+    }
+
+    /* Action buttons */
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary-404 {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      background: linear-gradient(135deg, #d4af37, #b8962e);
+      color: #0a0a0a;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 20px rgba(212,175,55,0.25);
+    }
+    .btn-primary-404:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(212,175,55,0.35);
+    }
+
+    .btn-ghost-404 {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      background: transparent;
+      color: #d4af37;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+    .btn-ghost-404:hover {
+      background: rgba(212,175,55,0.07);
+      border-color: rgba(212,175,55,0.7);
+      transform: translateY(-2px);
+    }
+
+    /* Footer note */
+    .footer-note {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.78rem;
+      color: #444;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      z-index: 1;
+    }
+
+    /* Floating particles */
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #d4af37;
+      border-radius: 50%;
+      opacity: 0;
+      animation: float-up linear infinite;
+    }
+    @keyframes float-up {
+      0%   { opacity: 0; transform: translateY(0) scale(0); }
+      10%  { opacity: 0.6; transform: translateY(-10px) scale(1); }
+      90%  { opacity: 0.2; }
+      100% { opacity: 0; transform: translateY(-80px) scale(0.5); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="accent-line"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <!-- Floating particles -->
+  <div class="particles" id="particles"></div>
+
+  <div class="container">
+    <div class="error-number">404</div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-icon">🏛</span>
+      <div class="divider-line right"></div>
+    </div>
+
+    <h1 class="error-title">This Wing Is Closed</h1>
+    <p class="error-subtitle">
+      The exhibit you're looking for hasn't opened yet — or may have<br>
+      moved to a different gallery. This feature is <em>coming soon</em>.
+    </p>
+
+    <div class="btn-group">
+      <a href="index.html" class="btn-primary-404">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+        </svg>
+        Back to Home
+      </a>
+      <a href="javascript:history.back()" class="btn-ghost-404">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        Go Back
+      </a>
+    </div>
+  </div>
+
+  <p class="footer-note">STACKLY Museum &mdash; Est. 2024</p>
+
+  <script>
+    // Generate floating particles
+    const container = document.getElementById('particles');
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.bottom = Math.random() * 20 + 'vh';
+      p.style.animationDuration = (6 + Math.random() * 10) + 's';
+      p.style.animationDelay = (Math.random() * 10) + 's';
+      p.style.width = p.style.height = (1 + Math.random() * 2) + 'px';
+      container.appendChild(p);
+    }
+  </script>
+</body>
+
+</html>

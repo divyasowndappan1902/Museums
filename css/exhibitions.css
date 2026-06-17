@@ -259,3 +259,11 @@
   .archive-table tr { padding: 16px 0; display: block; }
   .archive-table td:first-child { padding-bottom: 4px; }
 }
+
+@media (max-width: 380px) {
+  .spotlight-title { font-size: 2rem; }
+  .virtual-card, .spotlight-content { padding: 16px; }
+  .archive-table { padding: 16px; display: block; overflow-x: auto; }
+  .upcoming-card { padding: 16px; }
+  .exhibitions-hero-title { font-size: 2.5rem; }
+}

@@ -14,7 +14,7 @@
   <meta property="og:type" content="website">
 
   <!-- Preload Key Resources -->
-  <link rel="preload" href="images/hero.png" as="image">
+  <link rel="preload" href="images/hero.webp" as="image">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
@@ -32,15 +32,9 @@
        LOADER
        ========================================== -->
   <div id="loader">
-    <div class="loader-logo">Stackly</div>
+    <img src="images/logo.png" alt="STACKLY" class="loader-logo-img">
     <div class="loader-line"></div>
   </div>
-
-  <!-- ==========================================
-       CUSTOM CURSOR
-       ========================================== -->
-  <div class="cursor"></div>
-  <div class="cursor-follower"></div>
 
   <!-- ==========================================
        LIGHTBOX
@@ -63,7 +57,7 @@
       <a href="about.html" class="mobile-menu-link">About</a>
       <a href="exhibitions.html" class="mobile-menu-link">Exhibitions</a>
       <a href="gallery.html" class="mobile-menu-link">Gallery</a>
-      <a href="#" class="mobile-menu-link" id="mobile-signin-trigger">Sign In</a>
+      <a href="404.html" class="mobile-menu-link" id="mobile-signin-trigger">Sign In</a>
     </nav>
   </div>
 
@@ -71,14 +65,14 @@
        NAVIGATION
        ========================================== -->
   <header id="navbar" role="banner">
-    <a href="#" class="nav-logo" aria-label="MUSE Museum Home">STA<span>C</span>KLY</a>
+    <a href="index.html" class="nav-logo" aria-label="STACKLY Museum Home"><img src="images/logo.png" alt="STACKLY"></a>
 
     <nav class="nav-links" role="navigation" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="exhibitions.html">Exhibitions</a>
       <a href="gallery.html">Gallery</a>
-      <a href="#" class="nav-cta" id="signin-trigger">Sign In</a>
+      <a href="404.html" class="nav-cta" id="signin-trigger">Sign In</a>
     </nav>
 
     <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
@@ -137,10 +131,7 @@
       </div>
     </div>
 
-    <div class="hero-scroll" aria-hidden="true">
-      <div class="hero-scroll-line"></div>
-      <div class="hero-scroll-text">Scroll</div>
-    </div>
+
   </section>
 
   <!-- ==========================================
@@ -191,7 +182,7 @@
   <section id="about">
     <div class="about-grid">
       <div class="about-image-wrapper reveal-left">
-        <img src="images/exhibition.png" alt="MUSE Museum grand exhibition hall" class="about-image" loading="lazy">
+        <img src="images/exhibition.webp" alt="MUSE Museum grand exhibition hall" class="about-image" loading="lazy">
         <div class="about-image-frame" aria-hidden="true"></div>
         <div class="about-badge" aria-label="100 years of legacy">
           <div class="about-badge-number">100</div>
@@ -261,13 +252,13 @@
         </div>
         <h2 class="section-title reveal delay-1">Current <em>Exhibitions</em></h2>
       </div>
-      <a href="#" class="btn-outline reveal delay-2" id="view-all-exhibitions-btn">View All</a>
+      <a href="404.html" class="btn-outline reveal delay-2" id="view-all-exhibitions-btn">View All</a>
     </div>
 
     <div class="exhibitions-grid">
       <!-- Featured large card -->
       <article class="exhibition-card" id="exhibition-card-1" tabindex="0" role="article">
-        <img src="images/artwork1.png" alt="Geometric Visions exhibition artwork" class="exhibition-card-image"
+        <img src="images/artwork1.webp" alt="Geometric Visions exhibition artwork" class="exhibition-card-image"
           loading="lazy">
         <div class="exhibition-card-overlay">
           <span class="exhibition-card-tag">Featured</span>
@@ -283,7 +274,7 @@
 
       <!-- Card 2 -->
       <article class="exhibition-card" id="exhibition-card-2" tabindex="0" role="article">
-        <img src="images/artwork2.png" alt="Impressionist Dreams exhibition" class="exhibition-card-image"
+        <img src="images/artwork2.webp" alt="Impressionist Dreams exhibition" class="exhibition-card-image"
           loading="lazy">
         <div class="exhibition-card-overlay">
           <span class="exhibition-card-tag">Impressionism</span>
@@ -402,14 +393,14 @@
         </div>
         <h2 class="section-title reveal delay-1">The <em>Visionaries</em></h2>
       </div>
-      <a href="#" class="btn-outline reveal delay-2" id="view-all-artists-btn">All Artists</a>
+      <a href="404.html" class="btn-outline reveal delay-2" id="view-all-artists-btn">All Artists</a>
     </div>
 
     <div class="artists-grid">
       <!-- Artist 1 -->
       <article class="artist-card" id="artist-card-1" tabindex="0">
         <div class="artist-card-image-wrap">
-          <img src="images/artist1.png" alt="Elena Marchetti, painter" class="artist-card-image" loading="lazy">
+          <img src="images/artist1.webp" alt="Elena Marchetti, painter" class="artist-card-image" loading="lazy">
           <div class="artist-card-overlay" aria-hidden="true"></div>
           <div class="artist-card-number" aria-hidden="true">01</div>
         </div>
@@ -421,7 +412,7 @@
             memory and place, drawing from the Italian countryside of her youth to create
             hauntingly beautiful landscapes.
           </p>
-          <a href="#" class="artist-card-link" aria-label="View Elena Marchetti's profile">
+          <a href="404.html" class="artist-card-link" aria-label="View Elena Marchetti's profile">
             View Profile
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7" />
@@ -433,7 +424,7 @@
       <!-- Artist 2 -->
       <article class="artist-card" id="artist-card-2" tabindex="0">
         <div class="artist-card-image-wrap">
-          <img src="images/artist2.png" alt="Marcus Chen, sculptor" class="artist-card-image" loading="lazy">
+          <img src="images/artist2.webp" alt="Marcus Chen, sculptor" class="artist-card-image" loading="lazy">
           <div class="artist-card-overlay" aria-hidden="true"></div>
           <div class="artist-card-number" aria-hidden="true">02</div>
         </div>
@@ -445,7 +436,7 @@
             interrogate the boundary between the organic and the industrial. His monumental
             works stand in 12 countries worldwide.
           </p>
-          <a href="#" class="artist-card-link" aria-label="View Marcus Chen's profile">
+          <a href="404.html" class="artist-card-link" aria-label="View Marcus Chen's profile">
             View Profile
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7" />
@@ -500,7 +491,7 @@
             between viewer and artwork. Using AI and generative algorithms, she creates
             ever-evolving visual worlds.
           </p>
-          <a href="#" class="artist-card-link" aria-label="View Yuki Tanaka's profile">
+          <a href="404.html" class="artist-card-link" aria-label="View Yuki Tanaka's profile">
             View Profile
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7" />
@@ -627,7 +618,7 @@
       <!-- Item 1 -->
       <div class="gallery-item" data-category="painting" role="listitem" tabindex="0" id="gallery-item-1"
         aria-label="Abstract geometric artwork">
-        <img src="images/artwork1.png" alt="Geometric Visions — Abstract painting with gold and black" loading="lazy">
+        <img src="images/artwork1.webp" alt="Geometric Visions — Abstract painting with gold and black" loading="lazy">
         <div class="gallery-item-overlay" aria-hidden="true">
           <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
@@ -669,7 +660,7 @@
       <!-- Item 3 -->
       <div class="gallery-item" data-category="painting" role="listitem" tabindex="0" id="gallery-item-3"
         aria-label="Impressionist painting of woman">
-        <img src="images/artwork2.png" alt="Impressionist painting — woman by window" loading="lazy">
+        <img src="images/artwork2.webp" alt="Impressionist painting — woman by window" loading="lazy">
         <div class="gallery-item-overlay" aria-hidden="true">
           <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
@@ -705,7 +696,7 @@
       <!-- Item 5: Artist portrait in gallery -->
       <div class="gallery-item" data-category="photo" role="listitem" tabindex="0" id="gallery-item-5"
         aria-label="Artist portrait in studio">
-        <img src="images/artist1.png" alt="Artist Elena Marchetti in her studio" loading="lazy">
+        <img src="images/artist1.webp" alt="Artist Elena Marchetti in her studio" loading="lazy">
         <div class="gallery-item-overlay" aria-hidden="true">
           <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
@@ -741,7 +732,7 @@
       <!-- Item 7: Exhibition hall -->
       <div class="gallery-item" data-category="photo" role="listitem" tabindex="0" id="gallery-item-7"
         aria-label="Exhibition gallery hall">
-        <img src="images/exhibition.png" alt="MUSE exhibition gallery hall" loading="lazy">
+        <img src="images/exhibition.webp" alt="MUSE exhibition gallery hall" loading="lazy">
         <div class="gallery-item-overlay" aria-hidden="true">
           <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
@@ -811,7 +802,7 @@
             <li class="ticket-feature"><span class="ticket-feature-dot"></span>Self-Guided Tour</li>
             <li class="ticket-feature"><span class="ticket-feature-dot"></span>Audio Guide App</li>
           </ul>
-          <a href="#" class="ticket-btn" id="btn-general-ticket">Book Now</a>
+          <a href="404.html" class="ticket-btn" id="btn-general-ticket">Book Now</a>
         </div>
 
         <div class="ticket-card featured" id="ticket-premium">
@@ -824,7 +815,7 @@
             <li class="ticket-feature"><span class="ticket-feature-dot"></span>Exclusive Lounge Access</li>
             <li class="ticket-feature"><span class="ticket-feature-dot"></span>Museum Catalogue</li>
           </ul>
-          <a href="#" class="ticket-btn" id="btn-premium-ticket">Book Now</a>
+          <a href="404.html" class="ticket-btn" id="btn-premium-ticket">Book Now</a>
         </div>
 
         <div class="ticket-card" id="ticket-member">
@@ -837,7 +828,7 @@
             <li class="ticket-feature"><span class="ticket-feature-dot"></span>10% Shop Discount</li>
             <li class="ticket-feature"><span class="ticket-feature-dot"></span>Guest Passes (x2)</li>
           </ul>
-          <a href="#" class="ticket-btn" id="btn-annual-ticket">Become a Member</a>
+          <a href="404.html" class="ticket-btn" id="btn-annual-ticket">Become a Member</a>
         </div>
 
       </div>
@@ -896,10 +887,10 @@
 
       <!-- Brand -->
       <div>
-        <div class="footer-brand-name">STA<span>C</span>KLY</div>
+        <div class="footer-brand-name"><img src="images/logo.png" alt="STACKLY"></div>
         <p class="footer-tagline">Where Art Meets Eternity</p>
         <div class="footer-social" aria-label="Social media links">
-          <a href="#" class="footer-social-link" aria-label="Stackly on Instagram">
+          <a href="404.html" class="footer-social-link" aria-label="Stackly on Instagram">
             <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
               aria-hidden="true">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -907,20 +898,20 @@
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
             </svg>
           </a>
-          <a href="#" class="footer-social-link" aria-label="Stackly on Facebook">
+          <a href="404.html" class="footer-social-link" aria-label="Stackly on Facebook">
             <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
               aria-hidden="true">
               <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
             </svg>
           </a>
-          <a href="#" class="footer-social-link" aria-label="Stackly on Twitter">
+          <a href="404.html" class="footer-social-link" aria-label="Stackly on Twitter">
             <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
               aria-hidden="true">
               <path
                 d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
             </svg>
           </a>
-          <a href="#" class="footer-social-link" aria-label="Stackly on YouTube">
+          <a href="404.html" class="footer-social-link" aria-label="Stackly on YouTube">
             <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
               aria-hidden="true">
               <path
@@ -950,10 +941,10 @@
         <ul class="footer-links">
           <li><a href="#visit" class="footer-link">Tickets & Admission</a></li>
           <li><a href="index.html#signin" class="footer-link">Member Sign In</a></li>
-          <li><a href="#" class="footer-link">Museum Shop</a></li>
-          <li><a href="#" class="footer-link">Restaurant & Café</a></li>
-          <li><a href="#" class="footer-link">Accessibility</a></li>
-          <li><a href="#" class="footer-link">Group Visits</a></li>
+          <li><a href="404.html" class="footer-link">Museum Shop</a></li>
+          <li><a href="404.html" class="footer-link">Restaurant & Café</a></li>
+          <li><a href="404.html" class="footer-link">Accessibility</a></li>
+          <li><a href="404.html" class="footer-link">Group Visits</a></li>
         </ul>
       </div>
 
@@ -979,9 +970,9 @@
     <div class="footer-bottom">
       <p class="footer-copyright">© 2026 Stackly Museum of Modern & Contemporary Art. All rights reserved.</p>
       <div class="footer-bottom-links">
-        <a href="#" class="footer-bottom-link">Privacy Policy</a>
-        <a href="#" class="footer-bottom-link">Terms of Use</a>
-        <a href="#" class="footer-bottom-link">Accessibility</a>
+        <a href="404.html" class="footer-bottom-link">Privacy Policy</a>
+        <a href="404.html" class="footer-bottom-link">Terms of Use</a>
+        <a href="404.html" class="footer-bottom-link">Accessibility</a>
       </div>
     </div>
   </footer>
@@ -1001,10 +992,7 @@
 
       <!-- Logo -->
       <a href="index.html" class="signin-modal-logo">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-        </svg>
-        STA<span>C</span>KLY
+        <img src="images/logo.png" alt="STACKLY">
       </a>
 
       <!-- Heading -->
@@ -1067,7 +1055,7 @@
             <input type="checkbox" id="modal-remember">
             <span>Remember me</span>
           </label>
-          <a href="#" class="smf-forgot">Forgot password?</a>
+          <a href="404.html" class="smf-forgot">Forgot password?</a>
         </div>
 
         <!-- Submit -->

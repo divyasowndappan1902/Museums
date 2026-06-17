@@ -42,20 +42,15 @@
 .auth-logo {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: var(--white-pure);
+  height: 40px;
   margin-bottom: 24px;
   text-decoration: none;
 }
 
-.auth-logo svg {
-  width: 32px;
-  height: 32px;
-  color: var(--gold);
+.auth-logo img {
+  height: 100%;
+  width: auto;
+  display: block;
 }
 
 .auth-title {
@@ -360,17 +355,16 @@
 .signin-modal-logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: var(--white-pure);
+  height: 32px;
   text-decoration: none;
   margin-bottom: 24px;
 }
-.signin-modal-logo svg { width: 26px; height: 26px; color: var(--gold); }
-.signin-modal-logo span { color: var(--gold); }
+
+.signin-modal-logo img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
 
 /* Modal Titles */
 .signin-modal-title {
@@ -539,4 +533,14 @@
 @media (max-width: 480px) {
   .signin-modal-card { padding: 40px 24px 32px; }
   .signin-modal-title { font-size: 1.6rem; }
+}
+
+@media (max-width: 380px) {
+  .signin-modal-card { padding: 32px 16px 24px; }
+  .auth-card { padding: 32px 16px 24px; margin: 16px; }
+  .signin-modal-title, .auth-title { font-size: 1.4rem; }
+  .social-login { flex-direction: column; gap: 12px; }
+  .social-btn { padding: 12px; font-size: 0.85rem; }
+  .smf-group { gap: 12px; }
+  .smf-input { padding: 12px 16px; font-size: 0.9rem; }
 }

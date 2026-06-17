@@ -37,6 +37,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -46,6 +48,8 @@ body {
   font-weight: 300;
   line-height: 1.7;
   overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -90,13 +94,10 @@ ul { list-style: none; }
   visibility: hidden;
 }
 
-.loader-logo {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--gold);
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
+.loader-logo-img {
+  height: 50px;
+  width: auto;
+  display: block;
 }
 
 .loader-line {
@@ -118,33 +119,6 @@ ul { list-style: none; }
 
 @keyframes loaderSlide {
   to { transform: translateX(0); }
-}
-
-/* ================================================
-   CURSOR
-   ================================================ */
-.cursor {
-  width: 10px;
-  height: 10px;
-  background: var(--gold);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9998;
-  transition: transform 0.1s ease;
-  mix-blend-mode: difference;
-}
-
-.cursor-follower {
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9997;
-  transition: transform 0.3s var(--transition), width 0.3s ease, height 0.3s ease, background 0.3s ease;
-  transform: translate(-50%, -50%);
 }
 
 /* ================================================
@@ -171,15 +145,15 @@ ul { list-style: none; }
 }
 
 .nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: var(--white-pure);
+  display: flex;
+  align-items: center;
+  height: 32px;
 }
 
-.nav-logo span {
-  color: var(--gold);
+.nav-logo img {
+  height: 100%;
+  width: auto;
+  display: block;
 }
 
 .nav-links {
@@ -235,6 +209,8 @@ ul { list-style: none; }
   gap: 5px;
   cursor: pointer;
   padding: 5px;
+  background: transparent;
+  border: none;
 }
 
 .nav-toggle span {
@@ -243,6 +219,22 @@ ul { list-style: none; }
   height: 1px;
   background: var(--white);
   transition: all 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+#mobile-menu-close {
+  display: none !important;
 }
 
 /* ================================================
@@ -260,7 +252,7 @@ ul { list-style: none; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/hero.png');
+  background-image: url('../images/hero.webp');
   background-size: cover;
   background-position: center;
   transform: scale(1.1);
@@ -1290,7 +1282,7 @@ section {
 .visit-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/exhibition.png');
+  background-image: url('../images/exhibition.webp');
   background-size: cover;
   background-position: center;
   filter: brightness(0.15);
@@ -1554,15 +1546,16 @@ footer {
 }
 
 .footer-brand-name {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--white-pure);
-  letter-spacing: 0.1em;
+  display: block;
+  height: 36px;
   margin-bottom: 8px;
 }
 
-.footer-brand-name span { color: var(--gold); }
+.footer-brand-name img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
 
 .footer-tagline {
   font-family: var(--font-elegant);
@@ -1743,6 +1736,7 @@ footer {
 }
 
 @media (max-width: 900px) {
+  html, body { overflow-x: hidden; }
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
   .about-grid { grid-template-columns: 1fr; }
@@ -1774,4 +1768,19 @@ footer {
   .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
   .visit-hours { flex-wrap: wrap; gap: 30px; }
   .about-stats { flex-wrap: wrap; gap: 24px; }
+}
+
+@media (max-width: 380px) {
+  section { padding: 60px 16px; }
+  #navbar { padding: 16px 16px; }
+  #navbar.scrolled { padding: 12px 16px; }
+  .hero-content { padding: 0 16px; }
+  .gallery-masonry { columns: 1; }
+  .about-badge { transform: scale(0.8); }
+  .exhibition-card-title { font-size: 1.3rem; }
+  .visit-hours { flex-direction: column; gap: 16px; }
+  .about-stats { flex-direction: column; gap: 16px; }
+  .event-item { grid-template-columns: 1fr; text-align: center; }
+  .event-date { margin: 0 auto 16px auto; }
+  p { word-wrap: break-word; }
 }

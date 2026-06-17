@@ -293,3 +293,11 @@
   .timeline-content { width: 100%; }
   .touring-item { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
+
+@media (max-width: 380px) {
+  .timeline-item { padding-left: 20px; }
+  .acq-card, .masterpiece-card { padding: 16px; }
+  .masterpiece-title { font-size: 1.5rem; }
+  .gallery-hero-title { font-size: 2.5rem; }
+  .acq-content { padding: 24px 16px; }
+}

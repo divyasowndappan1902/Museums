@@ -19,48 +19,6 @@ window.addEventListener('load', () => {
 });
 
 // ================================================
-// CUSTOM CURSOR
-// ================================================
-const cursor = document.querySelector('.cursor');
-const cursorFollower = document.querySelector('.cursor-follower');
-let mouseX = 0, mouseY = 0;
-let followerX = 0, followerY = 0;
-
-if (cursor && cursorFollower) {
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursor.style.left = mouseX + 'px';
-    cursor.style.top = mouseY + 'px';
-    cursor.style.transform = 'translate(-50%, -50%)';
-  });
-
-  function animateCursor() {
-    followerX += (mouseX - followerX) * 0.08;
-    followerY += (mouseY - followerY) * 0.08;
-    cursorFollower.style.left = followerX + 'px';
-    cursorFollower.style.top = followerY + 'px';
-    requestAnimationFrame(animateCursor);
-  }
-  animateCursor();
-
-  // Cursor hover effects
-  const hoverElements = document.querySelectorAll('a, button, .exhibition-card, .artist-card, .gallery-item, .event-item, .ticket-card');
-  hoverElements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursorFollower.style.width = '60px';
-      cursorFollower.style.height = '60px';
-      cursorFollower.style.background = 'rgba(201, 168, 76, 0.1)';
-    });
-    el.addEventListener('mouseleave', () => {
-      cursorFollower.style.width = '36px';
-      cursorFollower.style.height = '36px';
-      cursorFollower.style.background = 'transparent';
-    });
-  });
-}
-
-// ================================================
 // NAVBAR SCROLL
 // ================================================
 const navbar = document.getElementById('navbar');
@@ -87,12 +45,18 @@ const mobileMenuClose = document.getElementById('mobile-menu-close');
 const mobileLinks = document.querySelectorAll('.mobile-menu-link');
 
 navToggle?.addEventListener('click', () => {
-  mobileMenu?.classList.add('open');
-  document.body.style.overflow = 'hidden';
+  if (mobileMenu?.classList.contains('open')) {
+    closeMobileMenu();
+  } else {
+    mobileMenu?.classList.add('open');
+    navToggle?.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
 });
 
 function closeMobileMenu() {
   mobileMenu?.classList.remove('open');
+  navToggle?.classList.remove('active');
   document.body.style.overflow = '';
 }
 
@@ -403,3 +367,57 @@ function addTiltEffect(selector) {
 }
 
 addTiltEffect('.ticket-card');
+
+// ================================================
+// NEWSLETTER FORM — prevent redirect, show success
+// ================================================
+(function () {
+  const form = document.getElementById('newsletter-form');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const emailInput = document.getElementById('newsletter-email');
+    const btn = document.getElementById('newsletter-submit-btn');
+    const email = emailInput ? emailInput.value.trim() : '';
+
+    // Basic email validation
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      emailInput.style.borderColor = '#e74c3c';
+      emailInput.placeholder = 'Please enter a valid email';
+      setTimeout(() => {
+        emailInput.style.borderColor = '';
+        emailInput.placeholder = 'Your email address';
+      }, 2500);
+      return;
+    }
+
+    // Show loading state
+    btn.textContent = 'Subscribing…';
+    btn.disabled = true;
+
+    // Simulate async subscription
+    setTimeout(() => {
+      // Replace the form with a success message
+      const parent = form.parentElement;
+      form.style.display = 'none';
+
+      const msg = document.createElement('div');
+      msg.style.cssText = `
+        display:flex; flex-direction:column; align-items:center; gap:12px;
+        animation: fadeIn 0.5s ease;
+      `;
+      msg.innerHTML = `
+        <div style="font-size:2.5rem;">🎉</div>
+        <p style="color:var(--gold);font-size:1.1rem;font-weight:600;letter-spacing:0.05em;">
+          You're subscribed!
+        </p>
+        <p style="color:var(--white-muted);font-size:0.9rem;text-align:center;">
+          Thank you! We'll keep you updated on exhibitions, events & offers.
+        </p>
+      `;
+      parent.appendChild(msg);
+    }, 800);
+  });
+})();

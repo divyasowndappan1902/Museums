@@ -15,10 +15,6 @@
 
 <body>
 
-  <!-- CUSTOM CURSOR -->
-  <div class="cursor"></div>
-  <div class="cursor-follower"></div>
-
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
     <button id="mobile-menu-close" aria-label="Close menu"
@@ -34,7 +30,7 @@
 
   <!-- NAVIGATION -->
   <header id="navbar" role="banner">
-    <a href="index.html" class="nav-logo" aria-label="MUSE Museum Home">STA<span>C</span>KLY</a>
+    <a href="index.html" class="nav-logo" aria-label="STACKLY Museum Home"><img src="images/logo.png" alt="STACKLY"></a>
 
     <nav class="nav-links" role="navigation" aria-label="Main navigation">
       <a href="index.html">Home</a>
@@ -64,7 +60,7 @@
   <section id="about">
     <div class="about-grid">
       <div class="about-image-wrapper reveal-left">
-        <img src="images/exhibition.png" alt="MUSE Museum grand exhibition hall" class="about-image" loading="lazy">
+        <img src="images/exhibition.webp" alt="MUSE Museum grand exhibition hall" class="about-image" loading="lazy">
         <div class="about-image-frame" aria-hidden="true"></div>
         <div class="about-badge" aria-label="100 years of legacy">
           <div class="about-badge-number">100</div>
@@ -327,33 +323,90 @@
   <!-- FOOTER -->
   <footer role="contentinfo">
     <div class="footer-grid">
+
+      <!-- Brand -->
       <div>
-        <div class="footer-brand-name">M<span>U</span>SE</div>
+        <div class="footer-brand-name"><img src="images/logo.png" alt="STACKLY"></div>
         <p class="footer-tagline">Where Art Meets Eternity</p>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="404.html" class="footer-social-link" aria-label="Stackly on Instagram">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+          </a>
+          <a href="404.html" class="footer-social-link" aria-label="Stackly on Facebook">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+            </svg>
+          </a>
+          <a href="404.html" class="footer-social-link" aria-label="Stackly on Twitter">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+            </svg>
+          </a>
+          <a href="404.html" class="footer-social-link" aria-label="Stackly on YouTube">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+            </svg>
+          </a>
+        </div>
       </div>
+
+      <!-- Explore -->
       <div>
         <h3 class="footer-col-title">Explore</h3>
         <ul class="footer-links">
           <li><a href="exhibitions.html" class="footer-link">Exhibitions</a></li>
-          <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+          <li><a href="exhibitions.html#artists" class="footer-link">Artists</a></li>
+          <li><a href="gallery.html" class="footer-link">Collection</a></li>
+          <li><a href="index.html#events" class="footer-link">Events &amp; Programs</a></li>
+          <li><a href="about.html" class="footer-link">About MUSE</a></li>
+          <li><a href="gallery.html" class="footer-link">Virtual Tours</a></li>
         </ul>
       </div>
+
+      <!-- Visit -->
       <div>
         <h3 class="footer-col-title">Visit</h3>
         <ul class="footer-links">
-          <li><a href="index.html#visit" class="footer-link">Tickets & Admission</a></li>
+          <li><a href="index.html#visit" class="footer-link">Tickets &amp; Admission</a></li>
+          <li><a href="index.html#signin" class="footer-link">Member Sign In</a></li>
+          <li><a href="404.html" class="footer-link">Museum Shop</a></li>
+          <li><a href="404.html" class="footer-link">Restaurant &amp; Café</a></li>
+          <li><a href="404.html" class="footer-link">Accessibility</a></li>
+          <li><a href="404.html" class="footer-link">Group Visits</a></li>
         </ul>
       </div>
+
+      <!-- Contact -->
       <div>
         <h3 class="footer-col-title">Contact</h3>
         <div class="footer-contact-item">
           <span class="footer-contact-icon">📍</span>
-          <span class="footer-contact-text">1011 Fifth Avenue<br>New York, NY 10028</span>
+          <span class="footer-contact-text">MMM Complex, Chinnathirupati<br>Salem, TN 636008</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📞</span>
+          <span class="footer-contact-text">+91 (987) 654-3210</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">✉</span>
+          <span class="footer-contact-text">info@stacklymuseum.org</span>
         </div>
       </div>
+
     </div>
+
     <div class="footer-bottom">
-      <p class="footer-copyright">© 2026 MUSE Museum. All rights reserved.</p>
+      <p class="footer-copyright">© 2026 Stackly Museum of Modern &amp; Contemporary Art. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html" class="footer-bottom-link">Privacy Policy</a>
+        <a href="404.html" class="footer-bottom-link">Terms of Use</a>
+        <a href="404.html" class="footer-bottom-link">Accessibility</a>
+      </div>
     </div>
   </footer>
 

@@ -94,7 +94,7 @@
 .arch-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/hero.png');
+  background-image: url('../images/hero.webp');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -297,4 +297,12 @@
   .conservation-grid .about-image-wrapper { order: 1; }
   .edu-cards { grid-template-columns: 1fr; }
   .arch-content { margin: 0 24px; padding: 40px 24px; }
+}
+
+@media (max-width: 380px) {
+  .team-grid { grid-template-columns: 1fr; }
+  .arch-content { margin: 0 16px; padding: 24px 16px; }
+  .value-card { padding: 24px 16px; }
+  .edu-card { padding: 24px 16px; }
+  .about-hero-title { font-size: 2.5rem; }
 }
