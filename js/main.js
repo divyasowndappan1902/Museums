@@ -386,4 +386,63 @@ document.addEventListener('DOMContentLoaded', () => {
     userNameElements.forEach(el => el.textContent = currentEmail);
     userAvatarElements.forEach(el => el.textContent = currentEmail.charAt(0).toUpperCase());
   }
+
+  // ================================================
+  // NEWSLETTER VALIDATION
+  // ================================================
+  const newsletterForms = document.querySelectorAll('.newsletter-form');
+  newsletterForms.forEach(form => {
+    let errorMsg = document.createElement('div');
+    errorMsg.className = 'newsletter-error';
+    errorMsg.textContent = 'Invalid';
+    errorMsg.style.color = '#e74c3c';
+    errorMsg.style.fontSize = '0.85rem';
+    errorMsg.style.marginTop = '4px';
+    errorMsg.style.display = 'none';
+    errorMsg.style.position = 'absolute';
+    errorMsg.style.bottom = '-25px';
+    errorMsg.style.left = '0';
+    form.style.position = 'relative';
+    form.appendChild(errorMsg);
+
+    form.setAttribute('novalidate', 'true');
+
+    const emailInput = form.querySelector('input[type="email"]');
+    const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('.newsletter-btn');
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.5';
+      submitBtn.style.cursor = 'not-allowed';
+    }
+
+    form.addEventListener('submit', (e) => {
+      if (emailInput) {
+        if (!emailInput.value || !emailPattern.test(emailInput.value)) {
+          e.preventDefault();
+          errorMsg.style.display = 'block';
+        } else {
+          e.preventDefault();
+          errorMsg.style.display = 'none';
+          window.location.href = '404.html';
+        }
+      }
+    });
+
+    emailInput?.addEventListener('input', () => {
+      errorMsg.style.display = 'none';
+      if (submitBtn) {
+        if (emailInput.value && emailPattern.test(emailInput.value)) {
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '1';
+          submitBtn.style.cursor = 'pointer';
+        } else {
+          submitBtn.disabled = true;
+          submitBtn.style.opacity = '0.5';
+          submitBtn.style.cursor = 'not-allowed';
+        }
+      }
+    });
+  });
 });
