@@ -1784,3 +1784,9 @@ footer {
   .event-date { margin: 0 auto 16px auto; }
   p { word-wrap: break-word; }
 }
+
+
+/* Active Nav Class */
+.nav-links a.active-nav {
+  color: var(--gold) !important;
+}

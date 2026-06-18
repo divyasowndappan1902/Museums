@@ -976,8 +976,13 @@
           document.head.appendChild(st);
         }
 
-        // Simulate account creation - replace with real API call
+        // Simulate account creation - save to localStorage
         setTimeout(() => {
+          // Save credentials for signin simulation
+          localStorage.setItem('muse_email', email);
+          localStorage.setItem('muse_password', pw);
+          localStorage.setItem('muse_role', role);
+
           submitBtn.disabled = false;
           submitBtn.innerHTML = `Create Account <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
           

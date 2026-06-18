@@ -525,19 +525,26 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      let storedEmail = localStorage.getItem('muse_current_email');
       let storedName = localStorage.getItem('userName');
       const nameElements = document.querySelectorAll('.user-name');
       const avatarElements = document.querySelectorAll('.user-avatar');
 
-      if (storedName) {
-        nameElements.forEach(el => el.textContent = storedName);
-      } else if (nameElements.length > 0) {
-        storedName = nameElements[0].textContent;
-      }
-
-      if (storedName) {
-        const initials = storedName.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+      if (storedEmail) {
+        nameElements.forEach(el => el.textContent = storedEmail);
+        const initials = storedEmail.charAt(0).toUpperCase();
         avatarElements.forEach(el => el.textContent = initials);
+      } else {
+        if (storedName) {
+          nameElements.forEach(el => el.textContent = storedName);
+        } else if (nameElements.length > 0) {
+          storedName = nameElements[0].textContent;
+        }
+
+        if (storedName) {
+          const initials = storedName.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+          avatarElements.forEach(el => el.textContent = initials);
+        }
       }
     });
   </script>

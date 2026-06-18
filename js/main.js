@@ -349,3 +349,41 @@ function addTiltEffect(selector) {
 
 addTiltEffect('.ticket-card');
 
+
+
+// ================================================
+// Active Nav Logic
+// ================================================
+document.addEventListener('DOMContentLoaded', () => {
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+  
+  navLinks.forEach(link => {
+    try {
+      const linkPath = new URL(link.href).pathname;
+      const isIndex = linkPath.endsWith('index.html');
+      
+      if (currentPath === linkPath || 
+          (currentPath.endsWith('/') && isIndex) ||
+          (currentPath === '/' && isIndex)) {
+        link.classList.add('active-nav');
+      } else {
+        link.classList.remove('active-nav');
+      }
+    } catch(e) {
+      // ignore invalid URLs
+    }
+  });
+
+  // ================================================
+  // Dynamic User Profile Logic
+  // ================================================
+  const currentEmail = localStorage.getItem('muse_current_email');
+  if (currentEmail) {
+    const userNameElements = document.querySelectorAll('.user-name');
+    const userAvatarElements = document.querySelectorAll('.user-avatar');
+    
+    userNameElements.forEach(el => el.textContent = currentEmail);
+    userAvatarElements.forEach(el => el.textContent = currentEmail.charAt(0).toUpperCase());
+  }
+});
