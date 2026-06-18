@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/dashboard.css">
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛</text></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body class="dashboard-body">
@@ -21,7 +22,7 @@
     <aside class="sidebar">
       <div class="sidebar-header">
         <a href="index.html" class="sidebar-logo">
-          <img src="images/logo.png" alt="STACKLY">
+          <img src="images/logo.webp" alt="STACKLY">
         </a>
       </div>
 
@@ -522,6 +523,24 @@
   });
 </script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let storedName = localStorage.getItem('userName');
+      const nameElements = document.querySelectorAll('.user-name');
+      const avatarElements = document.querySelectorAll('.user-avatar');
+
+      if (storedName) {
+        nameElements.forEach(el => el.textContent = storedName);
+      } else if (nameElements.length > 0) {
+        storedName = nameElements[0].textContent;
+      }
+
+      if (storedName) {
+        const initials = storedName.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+        avatarElements.forEach(el => el.textContent = initials);
+      }
+    });
+  </script>
 </body>
 
 </html>

@@ -213,25 +213,6 @@ window.addEventListener('scroll', () => {
   });
 }, { passive: true });
 
-// ================================================
-// NEWSLETTER FORM
-// ================================================
-const newsletterForm = document.getElementById('newsletter-form');
-newsletterForm?.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const input = newsletterForm.querySelector('.newsletter-input');
-  const btn = newsletterForm.querySelector('.newsletter-btn');
-  const originalText = btn.textContent;
-
-  btn.textContent = '✓ Subscribed!';
-  btn.style.background = '#2d7a2d';
-  input.value = '';
-
-  setTimeout(() => {
-    btn.textContent = originalText;
-    btn.style.background = '';
-  }, 3000);
-});
 
 // ================================================
 // STAGGERED ANIMATION FOR GRIDS
@@ -368,56 +349,3 @@ function addTiltEffect(selector) {
 
 addTiltEffect('.ticket-card');
 
-// ================================================
-// NEWSLETTER FORM — prevent redirect, show success
-// ================================================
-(function () {
-  const form = document.getElementById('newsletter-form');
-  if (!form) return;
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const emailInput = document.getElementById('newsletter-email');
-    const btn = document.getElementById('newsletter-submit-btn');
-    const email = emailInput ? emailInput.value.trim() : '';
-
-    // Basic email validation
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      emailInput.style.borderColor = '#e74c3c';
-      emailInput.placeholder = 'Please enter a valid email';
-      setTimeout(() => {
-        emailInput.style.borderColor = '';
-        emailInput.placeholder = 'Your email address';
-      }, 2500);
-      return;
-    }
-
-    // Show loading state
-    btn.textContent = 'Subscribing…';
-    btn.disabled = true;
-
-    // Simulate async subscription
-    setTimeout(() => {
-      // Replace the form with a success message
-      const parent = form.parentElement;
-      form.style.display = 'none';
-
-      const msg = document.createElement('div');
-      msg.style.cssText = `
-        display:flex; flex-direction:column; align-items:center; gap:12px;
-        animation: fadeIn 0.5s ease;
-      `;
-      msg.innerHTML = `
-        <div style="font-size:2.5rem;">🎉</div>
-        <p style="color:var(--gold);font-size:1.1rem;font-weight:600;letter-spacing:0.05em;">
-          You're subscribed!
-        </p>
-        <p style="color:var(--white-muted);font-size:0.9rem;text-align:center;">
-          Thank you! We'll keep you updated on exhibitions, events & offers.
-        </p>
-      `;
-      parent.appendChild(msg);
-    }, 800);
-  });
-})();
